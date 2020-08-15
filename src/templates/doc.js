@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import Share from "./share"
+// import Share from "./share"
 import { Breadcrumb } from "react-bootstrap"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
@@ -19,17 +19,16 @@ const Template = ({ data, pageContext }) => {
   return (
     <Layout>
         <SEO
-        title={title}
+        title={title + " - " + tag}
         description={post.excerpt}
         pathname={myUrl}
       />
       <Breadcrumb>
-        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-        <Breadcrumb.Item href={"/" + tag.toLowerCase()}>{tag}</Breadcrumb.Item>
+        <Breadcrumb.Item href="#"><Link to="/">Home</Link></Breadcrumb.Item>
+        <Breadcrumb.Item href="#"><Link to={"/" + tag.toLowerCase()}>{tag.toLowerCase()}</Link></Breadcrumb.Item>
         <Breadcrumb.Item active>{title.toLowerCase()}</Breadcrumb.Item>
       </Breadcrumb>
         <h1>{title}</h1>
-        <Share url={myUrl} />
         <small>
           <em>{date}</em>
         </small>

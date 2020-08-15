@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div>
+    <div style={{textAlign: `center`}}>
       <Header siteTitle={data.site.siteMetadata.title} />
         <main>{children}</main>
       </div>

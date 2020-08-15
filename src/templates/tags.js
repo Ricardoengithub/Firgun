@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import { Breadcrumb } from "react-bootstrap"
+import { Breadcrumb, ListGroup } from "react-bootstrap"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -13,20 +13,25 @@ const Tags = ({ pageContext, data }) => {
     <Layout>
         <SEO title={tag} />
         <Breadcrumb className="bg-dark" >
-          <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-            <Breadcrumb.Item active>{tag}</Breadcrumb.Item>
+        <Breadcrumb.Item href="#"><Link to="/">Home</Link></Breadcrumb.Item>
+            <Breadcrumb.Item active>{tag.toLowerCase()}</Breadcrumb.Item>
         </Breadcrumb>
-        <ul>
+          <ListGroup>
           {edges.map(({ node }) => {
             return (
-              <li key={node.frontmatter.title}>
-                <Link to={node.frontmatter.path}>
-                  {node.frontmatter.title}
-                </Link>
-              </li>
+              // <li key={node.frontmatter.title}>
+              //   <Link to={node.frontmatter.path}>
+              //     {node.frontmatter.title}
+              //   </Link>
+              // </li>
+              <Link to={node.frontmatter.path}>
+                <ListGroup.Item action >
+                {node.frontmatter.title}
+                </ListGroup.Item>
+            </Link>
             )
           })}
-        </ul>
+          </ListGroup>
         {/* <Link to="/tags">
           <h4>All tags</h4>
         </Link> */}
