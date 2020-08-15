@@ -13,27 +13,31 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const blogPostTemplate = path.resolve("src/templates/doc.js")
-    //const tagTemplate = path.resolve("src/templates/tags.js")
+    const tagTemplate = path.resolve("src/templates/tags.js")
     // Query for markdown nodes to use in creating pages.
     resolve(
       graphql(
         `
           query {
-            mdx(sort: { order: ASC, fields: [frontmatter___date] }) {
+            allMdx(sort: { order: ASC, fields: [frontmatter___date] }) {
               edges {
                 node {
                   frontmatter {
                     path
                     title
-                    tags
                   }
                 }
               }
             }
+            tagsGroup: allMdx(limit: 2000) {
+                group(field: frontmatter___tags) {
+                  fieldValue
+                }
+              }  
           }
         `
       ).then((result) => {
-        const posts = result.data.mdx.edges
+        const posts = result.data.allMdx.edges
 
         posts.forEach(({ node }, index) => {
           const path = node.frontmatter.path
@@ -50,17 +54,17 @@ exports.createPages = ({ graphql, actions }) => {
         })
 
         // Extract tag data from query
-        // const tags = result.data.tagsGroup.group
-        // // Make tag pages
-        // tags.forEach((tag) => {
-        //   createPage({
-        //     path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
-        //     component: tagTemplate,
-        //     context: {
-        //       tag: tag.fieldValue,
-        //     },
-        //   })
-        // })
+        const tags = result.data.tagsGroup.group
+        // Make tag pages
+        tags.forEach((tag) => {
+          createPage({
+            path: `/${_.kebabCase(tag.fieldValue)}/`,
+            component: tagTemplate,
+            context: {
+              tag: tag.fieldValue,
+            },
+          })
+        })
       })
     )
   })

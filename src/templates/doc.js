@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-// import Share from "./share"
+import Share from "./share"
 
 const Template = ({ data, pageContext }) => {
   const post = data.mdx.frontmatter
@@ -14,21 +14,22 @@ const Template = ({ data, pageContext }) => {
 
   return (
     <Layout>
+        <SEO
+        title={title}
+        description={post.excerpt}
+        pathname={myUrl}
+      />
         <h1>{title}</h1>
-        {/* <Share url={myUrl} /> */}
+        <Share url={myUrl} />
         <small>
           <em>{date}</em>
         </small>
           <div dangerouslySetInnerHTML={{ __html: html }} />
           {prev && (
-            <ButtonNavigation>
               <Link to={prev.frontmatter.path}>Previous</Link>
-            </ButtonNavigation>
           )}
           {next && (
-            <ButtonNavigation>
               <Link to={next.frontmatter.path}>Next</Link>
-            </ButtonNavigation>
           )}
     </Layout>
   )
@@ -45,7 +46,7 @@ export const postQuery = graphql`
       }
     }
     mdx(frontmatter: { path: { eq: $pathSlug } }) {
-      html
+      body
       frontmatter {
         title
         date(formatString: "MMMM, DD, YYYY")
