@@ -5,7 +5,7 @@ import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-boots
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Header = ({ siteTitle }) => (
-  <Navbar bg="light" expand="lg">
+  <Navbar bg="dark" variant="dark" expand="lg">
   <Navbar.Brand href="/">{siteTitle}</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
@@ -23,7 +23,7 @@ const Header = ({ siteTitle }) => (
     </Nav>
     <Form inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-success">Search</Button>
+      <Button variant="primary">Search</Button>
     </Form>
   </Navbar.Collapse>
 </Navbar>

@@ -18,22 +18,22 @@ const Share = (props) => {
   return (
     <div>
     <EmailShareButton url={props.url}>
-        <EmailIcon size={32} round={true} />
+        <EmailIcon size={20} round={true} />
       </EmailShareButton>
       <TwitterShareButton url={props.url}>
-        <TwitterIcon size={32} round={true} />
+        <TwitterIcon size={20} round={true} />
       </TwitterShareButton>
       <FacebookShareButton url={props.url}>
-        <FacebookIcon size={32} round={true} />
+        <FacebookIcon size={20} round={true} />
       </FacebookShareButton>
       <WhatsappShareButton url={props.url}>
-        <WhatsappIcon size={32} round={true} />
+        <WhatsappIcon size={20} round={true} />
       </WhatsappShareButton>
       <FacebookMessengerShareButton url={props.url}>
-        <FacebookMessengerIcon size={32} round={true} />
+        <FacebookMessengerIcon size={20} round={true} />
       </FacebookMessengerShareButton>
       <RedditShareButton url={props.url}>
-        <RedditIcon size={32} round={true} />
+        <RedditIcon size={20} round={true} />
       </RedditShareButton>
       </div>
   )

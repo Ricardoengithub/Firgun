@@ -4,24 +4,24 @@ import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
+import { Breadcrumb } from "react-bootstrap"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
-  const { edges, totalCount } = data.allMdx
-  const tagHeader = `${totalCount === 1 ? "Una" : totalCount} publicación${
-    totalCount === 1 ? "" : "es"
-  } en "${tag}"`
+  const { edges } = data.allMdx
   return (
     <Layout>
         <SEO title={tag} />
-        <h3>{tagHeader}</h3>
+        <Breadcrumb className="bg-dark" >
+          <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+            <Breadcrumb.Item active>{tag}</Breadcrumb.Item>
+        </Breadcrumb>
         <ul>
           {edges.map(({ node }) => {
             return (
               <li key={node.frontmatter.title}>
                 <Link to={node.frontmatter.path}>
-                  {node.frontmatter.title} -{" "}
-                  <small style={{ color: `black` }}>{node.frontmatter.date}</small>
+                  {node.frontmatter.title}
                 </Link>
               </li>
             )
