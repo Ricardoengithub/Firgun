@@ -16,7 +16,7 @@ const Tags = ({ pageContext, data }) => {
         <Breadcrumb.Item href="#"><Link to="/">Home</Link></Breadcrumb.Item>
             <Breadcrumb.Item active>{tag.toLowerCase()}</Breadcrumb.Item>
         </Breadcrumb>
-          <ListGroup>
+          <ListGroup style={{width: `300px`, margin: `0 auto`, textAlign: `center`}}>
           {edges.map(({ node }) => {
             return (
               // <li key={node.frontmatter.title}>
