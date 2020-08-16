@@ -7,8 +7,8 @@ author: "Ricardoentuiter"
 excerpt: "Estudiando el diseño del museo soumaya"
 ---
 import { Tab, Row, Col, ListGroup } from "react-bootstrap"
-import WithLineNumbers from "./withlines"
-import { pColor, pFontSize } from "./pcodes"
+import WithLineNumbers from "../../components/withlines"
+import { pColor, pFontSize, pFontFamily, pTransform } from "../../codes/pcodes"
 
 
 <Tab.Container id="list-group-tabs-example" defaultActiveKey="#color">
@@ -26,12 +26,6 @@ import { pColor, pFontSize } from "./pcodes"
         </ListGroup.Item>
         <ListGroup.Item action href="#transform">
           transform: 
-        </ListGroup.Item>
-                <ListGroup.Item action href="#rotate">
-          rotate: 
-        </ListGroup.Item>
-        <ListGroup.Item action href="#animation">
-          animation: 
         </ListGroup.Item>
       </ListGroup>
     </Col>
@@ -57,6 +51,28 @@ import { pColor, pFontSize } from "./pcodes"
                 <p>CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
                 <h6><b>Con CSS:</b></h6>
                 <p style="font-size: 20px">CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
+            </div>
+        </Tab.Pane>
+        <Tab.Pane eventKey="#font-family">
+                <div style={{textAlign: `center`}}>
+                <h2>Font Family</h2>
+                <h5>Cambia el diseño de letra del párrafo</h5>
+                <WithLineNumbers exampleCode={pFontFamily} lang={"css"}/>
+                <h6><b>Sin CSS:</b></h6>
+                <p>CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
+                <h6><b>Con CSS:</b></h6>
+                <p style="font-family: serif">CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
+            </div>
+        </Tab.Pane>
+        <Tab.Pane eventKey="#transform">
+            <div style={{textAlign: `center`}}>
+                <h2>Font Size</h2>
+                <h5>Transforma el párrafo</h5>
+                <WithLineNumbers exampleCode={pTransform} lang={"css"}/>
+                <h6><b>Sin CSS:</b></h6>
+                <p>CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
+                <h6><b>Con CSS:</b></h6>
+                <p style="transform: scale(1.5)">CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
             </div>
         </Tab.Pane>
       </Tab.Content>
