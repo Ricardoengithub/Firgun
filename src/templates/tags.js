@@ -8,7 +8,6 @@ import { Breadcrumb, ListGroup } from "react-bootstrap"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
-  const { edges } = data.allMdx
   return (
     <Layout>
         <SEO title={tag} />
@@ -17,16 +16,13 @@ const Tags = ({ pageContext, data }) => {
             <Breadcrumb.Item active>{tag.toLowerCase()}</Breadcrumb.Item>
         </Breadcrumb>
           <ListGroup style={{width: `300px`, margin: `0 auto`, textAlign: `center`}}>
-          {edges.map(({ node }) => {
-            return (
-
-              <Link to={"/" + tag + "/" + node.frontmatter.subtag}>
-                <ListGroup.Item action >
-                {node.frontmatter.subtag.toLowerCase()}
-                </ListGroup.Item>
-            </Link>
-            )
-          })}
+          {data.allMdx.distinct.map((node => 
+                          <Link to={"/" + tag + "/" + node}>
+                          <ListGroup.Item action >
+                          {node}
+                          </ListGroup.Item>
+                      </Link>
+          ))}
           </ListGroup>
     </Layout>
   )
@@ -70,6 +66,7 @@ export const pageQuery = graphql`
           }
         }
       }
+      distinct(field: frontmatter___subtag)
     }
   }
 `
