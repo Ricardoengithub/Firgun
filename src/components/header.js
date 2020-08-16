@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { Link } from "gatsby"
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Header = ({ siteTitle }) => (

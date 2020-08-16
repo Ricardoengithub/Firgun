@@ -6,12 +6,60 @@ tags: ["CSS"]
 author: "Ricardoentuiter"
 excerpt: "Estudiando el diseño del museo soumaya"
 ---
+import { Tab, Row, Col, ListGroup } from "react-bootstrap"
+import WithLineNumbers from "./withlines"
+import { pColor, pFontSize } from "./pcodes"
 
-# Hello, *world*!
 
-Below is an example of JSX embedded in Markdown. <br /> **Try and change
-the background color!**
-
-<div style={{ padding: '20px', backgroundColor: 'tomato' }}>
-  <h3>This is JSX</h3>
-</div>
+<Tab.Container id="list-group-tabs-example" defaultActiveKey="#color">
+  <Row>
+    <Col sm={4} style={{'max-height': 'calc(100vh - 50vh)', 'overflow-y': 'auto', 'text-align': `center`}}>
+      <ListGroup>
+        <ListGroup.Item action href="#color">
+          color: 
+        </ListGroup.Item>
+        <ListGroup.Item action href="#font-size">
+          font-size: 
+        </ListGroup.Item>
+                <ListGroup.Item action href="#font-family">
+          font-family: 
+        </ListGroup.Item>
+        <ListGroup.Item action href="#transform">
+          transform: 
+        </ListGroup.Item>
+                <ListGroup.Item action href="#rotate">
+          rotate: 
+        </ListGroup.Item>
+        <ListGroup.Item action href="#animation">
+          animation: 
+        </ListGroup.Item>
+      </ListGroup>
+    </Col>
+    <Col sm={8}>
+      <Tab.Content>
+        <Tab.Pane eventKey="#color">
+            <div style={{textAlign: `center`}}>
+                <h2>Color</h2>
+                <h5>Cambia el color del párrafo</h5>
+                <WithLineNumbers exampleCode={pColor} lang={"css"}/>
+                <h6><b>Sin CSS:</b></h6>
+                <p>CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
+                <h6><b>Con CSS:</b></h6>
+                <p style="color: purple">CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
+            </div>
+        </Tab.Pane>
+        <Tab.Pane eventKey="#font-size">
+            <div style={{textAlign: `center`}}>
+                <h2>Font Size</h2>
+                <h5>Cambia el tamaño del párrafo</h5>
+                <WithLineNumbers exampleCode={pFontSize} lang={"css"}/>
+                <h6><b>Sin CSS:</b></h6>
+                <p>CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
+                <h6><b>Con CSS:</b></h6>
+                <p style="font-size: 20px">CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
+            </div>
+        </Tab.Pane>
+      </Tab.Content>
+    </Col>
+  </Row>
+</Tab.Container>

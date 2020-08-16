@@ -26,7 +26,7 @@ const Tags = ({ pageContext, data }) => {
               // </li>
               <Link to={node.frontmatter.path}>
                 <ListGroup.Item action >
-                {node.frontmatter.title}
+                {node.frontmatter.title.toLowerCase()}
                 </ListGroup.Item>
             </Link>
             )
