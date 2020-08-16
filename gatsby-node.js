@@ -14,6 +14,7 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const blogPostTemplate = path.resolve("src/templates/doc.js")
     const tagTemplate = path.resolve("src/templates/tags.js")
+    const subtagsTemplate = path.resolve("src/templates/subtags.js")
     // Query for markdown nodes to use in creating pages.
     resolve(
       graphql(
@@ -33,7 +34,17 @@ exports.createPages = ({ graphql, actions }) => {
                 group(field: frontmatter___tags) {
                   fieldValue
                 }
-              }  
+            }
+            subtagsGroup: allMdx{
+              edges{
+                node{
+                  frontmatter{
+                    tags
+                    subtag
+                  }
+                }
+              }
+            } 
           }
         `
       ).then((result) => {
@@ -65,6 +76,25 @@ exports.createPages = ({ graphql, actions }) => {
             },
           })
         })
+
+        const subtags = result.data.subtagsGroup.edges
+
+        subtags.forEach(({ node }, index) => {
+          const path = "/" + node.frontmatter.tags + "/" + node.frontmatter.subtag
+          createPage({
+            path,
+            component: subtagsTemplate,
+            context: {
+              subtag: node.frontmatter.subtag,
+              tag: node.frontmatter.tags,
+              pathSlug: path,
+              // prev: index === 0 ? null : posts[index - 1].node,
+              // next: index === posts.length - 1 ? null : posts[index + 1].node,
+            },
+          })
+          resolve()
+        })
+        
       })
     )
   })

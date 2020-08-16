@@ -6,32 +6,35 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 import { Breadcrumb, ListGroup } from "react-bootstrap"
 
-const Tags = ({ pageContext, data }) => {
-  const { tag } = pageContext
+const SubTags = ({ pageContext, data }) => {
+  const subtag = pageContext.subtag
+  const tag = pageContext.tag
   const { edges } = data.allMdx
   return (
     <Layout>
-        <SEO title={tag} />
+        <SEO title={tag + "-" + subtag} />
         <Breadcrumb className="bg-dark" >
         <Breadcrumb.Item href="#"><Link to="/">Home</Link></Breadcrumb.Item>
-            <Breadcrumb.Item active>{tag.toLowerCase()}</Breadcrumb.Item>
+        <Breadcrumb.Item href="#"><Link to={"/" + tag}>{tag}</Link></Breadcrumb.Item>
+        <Breadcrumb.Item active>{subtag.toLowerCase()}</Breadcrumb.Item>
         </Breadcrumb>
-          <ListGroup style={{width: `300px`, margin: `0 auto`, textAlign: `center`}}>
+        <ListGroup style={{width: `300px`, margin: `0 auto`, textAlign: `center`}}>
           {edges.map(({ node }) => {
-            return (
-
-              <Link to={"/" + tag + "/" + node.frontmatter.subtag}>
+            if (node.frontmatter.subtag.toLowerCase() === subtag.toLowerCase()) {
+              return <Link to={"/" + tag + "/" + subtag + "/" + node.frontmatter.title}>
                 <ListGroup.Item action >
-                {node.frontmatter.subtag.toLowerCase()}
+                {node.frontmatter.title}
                 </ListGroup.Item>
-            </Link>
-            )
+              </Link>
+            }else{
+              return null;
+            }
           })}
           </ListGroup>
     </Layout>
   )
 }
-Tags.propTypes = {
+SubTags.propTypes = {
   pageContext: PropTypes.shape({
     tag: PropTypes.string.isRequired,
   }),
@@ -51,7 +54,7 @@ Tags.propTypes = {
     }),
   }),
 }
-export default Tags
+export default SubTags
 export const pageQuery = graphql`
   query($tag: String) {
     allMdx(
@@ -66,6 +69,7 @@ export const pageQuery = graphql`
             title
             path
             subtag
+            tags
             date(formatString: "MMMM DD, YYYY")
           }
         }
