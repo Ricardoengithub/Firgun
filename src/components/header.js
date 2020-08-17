@@ -25,6 +25,11 @@ const Header = ({ siteTitle }) => (
             Javascript
         </Link>
       </Nav.Item>
+      <Nav.Item style={{margin: `0 10px`}}>
+        <Link to="/blog" style={{color: `lightgray`}}>
+            Blog
+        </Link>
+      </Nav.Item>
       {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>

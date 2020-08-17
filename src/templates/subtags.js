@@ -21,7 +21,7 @@ const SubTags = ({ pageContext, data }) => {
         <ListGroup style={{width: `300px`, margin: `0 auto`, textAlign: `center`}}>
           {edges.map(({ node }) => {
             if (node.frontmatter.subtag.toLowerCase() === subtag.toLowerCase()) {
-              return <Link to={"/" + tag + "/" + subtag + "/" + node.frontmatter.title}>
+              return <Link to={node.frontmatter.path}>
                 <ListGroup.Item action >
                 {node.frontmatter.title}
                 </ListGroup.Item>
