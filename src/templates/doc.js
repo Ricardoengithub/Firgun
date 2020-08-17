@@ -18,7 +18,7 @@ const Template = ({ data, pageContext }) => {
   return (
     <Layout>
         <SEO
-        title={title}
+        title={title + " | " + subtag + " | " + tag.toUpperCase()}
         description={post.excerpt}
         pathname={myUrl}
       />

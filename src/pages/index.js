@@ -1,11 +1,12 @@
 import React from "react"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import { Alert } from "react-bootstrap"
 
-
-export default function Home() {
+function Home({data}) {
   return <Layout>
+      <SEO title={"Home"} description={data.site.siteMetadata.description}/>
     <Alert variant="success">
       <Alert.Heading>Hey, nice to see you</Alert.Heading>
       <p>
@@ -14,3 +15,19 @@ export default function Home() {
     </Alert>
   </Layout>
 }
+
+
+export const query = graphql`
+  query HomePageQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        author
+        siteUrl
+      }
+    }
+  }
+`
+
+export default Home

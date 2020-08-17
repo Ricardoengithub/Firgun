@@ -6,25 +6,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Header = ({ siteTitle }) => (
   <Navbar bg="dark" variant="dark" expand="lg">
-  <Navbar.Brand href="#"><Link to="/" style={{color: `white`}}>{siteTitle}</Link></Navbar.Brand>
+  <Navbar.Brand><Link to="/" style={{color: `white`}}>{siteTitle}</Link></Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="mr-auto">
-      <Nav.Link href="#">
+    <Nav className="navbar-nav mr-auto">
+      <Nav.Item style={{margin: `0 10px`}}>
         <Link to="/css" style={{color: `lightgray`}}>
             CSS
         </Link>
-      </Nav.Link>
-      <Nav.Link href="#">
+      </Nav.Item>
+      <Nav.Item style={{margin: `0 10px`}}>
         <Link to="/html" style={{color: `lightgray`}}>
             HTML
         </Link>
-      </Nav.Link>
-      <Nav.Link href="#">
+      </Nav.Item>
+      <Nav.Item style={{margin: `0 10px`}}>
         <Link to="/javascript" style={{color: `lightgray`}}>
             Javascript
         </Link>
-      </Nav.Link>
+      </Nav.Item>
       {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>

@@ -10,7 +10,7 @@ const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   return (
     <Layout>
-        <SEO title={tag} />
+        <SEO title={tag.toUpperCase()}/>
         <Breadcrumb className="bg-dark" >
         <Breadcrumb.Item href="#"><Link to="/">Home</Link></Breadcrumb.Item>
             <Breadcrumb.Item active>{tag.toLowerCase()}</Breadcrumb.Item>

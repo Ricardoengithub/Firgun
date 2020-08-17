@@ -12,7 +12,7 @@ const SubTags = ({ pageContext, data }) => {
   const { edges } = data.allMdx
   return (
     <Layout>
-        <SEO title={tag + "-" + subtag} />
+        <SEO title={ subtag + " | " + tag.toUpperCase()} />
         <Breadcrumb className="bg-dark" >
         <Breadcrumb.Item href="#"><Link to="/">Home</Link></Breadcrumb.Item>
         <Breadcrumb.Item href="#"><Link to={"/" + tag}>{tag}</Link></Breadcrumb.Item>
