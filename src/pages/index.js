@@ -10,7 +10,7 @@ function Home({data}) {
   return <Layout>
       <SEO title={"Home"} description={data.site.siteMetadata.description}/>
         <Alert variant="primary">
-          <Alert.Heading>Hola, que bueno verte.</Alert.Heading>
+          <Alert.Heading>¡Hola, que bueno verte!</Alert.Heading>
           <p>
           Firgun es un término hebréo el cuál describe un placer y orgullo por el logro de otra persona, Otra definición describre a Firgun como la generosidad de espíritu y empatía por que algo que le pasó o le pasará a otra persona. 
           </p>
@@ -63,7 +63,7 @@ function Home({data}) {
             Revisa nuestro blog dónde encontrarás cosas curiosas sobre lenguajes de programación.
             </Card.Text>
             <Row style={{width: `90%`, margin: `0 auto`}}>
-            <Link to="/blog/javascript">Blog</Link>
+            <Link to="/blog">Blog</Link>
             </Row>
           </Card.Body>
         </Card>

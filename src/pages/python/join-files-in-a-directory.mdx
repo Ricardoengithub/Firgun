@@ -8,7 +8,7 @@ author: "Ricardoentuiter"
 excerpt: "Junta todos los archivos en un directorio en uno solo"
 ---
 
-```python
+```python{numberLines: true}
 from os import listdir
 from os.path import isfile, join
 
@@ -27,4 +27,5 @@ everything = open(path + name, "w")
 for i in lista:
     everything.write(i)
 everything.close()
+
 ```
