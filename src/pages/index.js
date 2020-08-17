@@ -4,7 +4,8 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Alert, Card, Row } from "react-bootstrap"
-import { FaCss3Alt, FaHtml5, FaJs, FaBlog } from "react-icons/fa"
+import { FaCss3Alt, FaHtml5, FaJs, FaPython, FaBlog } from "react-icons/fa"
+import { DiGo } from "react-icons/di"
 
 function Home({data}) {
   return <Layout>
@@ -52,6 +53,34 @@ function Home({data}) {
             <Row style={{width: `50%`, display: `flex`, justifyContent: `space-around`}}>              
             <Link to="/javascript">Docs</Link>
             <Link to="/blog/javascript">Blog</Link>
+            </Row>
+          </Card.Body>
+        </Card>
+        <Card style={{ width: '18rem', margin: `0 auto` }}>
+          <Card.Body>
+            <Card.Title className="center"><DiGo style={{fontSize: 100, width: `50%`, margin: `0 4rem` }}/></Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">Golang</Card.Subtitle>
+            <Card.Text>
+            Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
+            </Card.Text>
+            <Row style={{width: `50%`, display: `flex`, justifyContent: `space-around`}}>              
+            <Link to="/golang">Docs</Link>
+            <Link to="/blog/golang">Blog</Link>
+            </Row>
+          </Card.Body>
+        </Card>
+        </Row>
+        <Row style={{maxWidth: `90vw`, margin: `4rem auto`}}>
+        <Card style={{ width: '18rem', margin: `0 auto` }}>
+          <Card.Body>
+            <Card.Title className="center"><FaPython style={{fontSize: 100, width: `50%`, margin: `0 4rem` }}/></Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">Python</Card.Subtitle>
+            <Card.Text>
+            Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código.​ 
+            </Card.Text>
+            <Row style={{width: `50%`, display: `flex`, justifyContent: `space-around`}}>              
+            <Link to="/python">Docs</Link>
+            <Link to="/blog/python">Blog</Link>
             </Row>
           </Card.Body>
         </Card>
