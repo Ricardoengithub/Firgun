@@ -14,10 +14,10 @@ import {
   RedditIcon,
 } from "react-share"
 
-const Share = (props) => {
+const Share = props => {
   return (
     <div>
-    <EmailShareButton url={props.url}>
+      <EmailShareButton url={props.url}>
         <EmailIcon size={20} round={true} />
       </EmailShareButton>
       <TwitterShareButton url={props.url}>
@@ -35,7 +35,7 @@ const Share = (props) => {
       <RedditShareButton url={props.url}>
         <RedditIcon size={20} round={true} />
       </RedditShareButton>
-      </div>
+    </div>
   )
 }
 

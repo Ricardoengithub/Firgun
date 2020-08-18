@@ -26,7 +26,7 @@ export default class Search extends Component {
           />
         </form>
         <ul>
-          {this.state.results.map((page) => (
+          {this.state.results.map(page => (
             // eslint-disable-next-line
             // <Link to={page.path + "#topp"} key={page.id}>
             //   <li>
@@ -38,8 +38,9 @@ export default class Search extends Component {
             <li key={page.title}>
               <Link to={page.path + "#topp"}>
                 {page.title}{" "}
-                <small style={{ color: `black` }}>{": #" + page.tags.join(`,`)} - {page.date}</small>
-                
+                <small style={{ color: `black` }}>
+                  {": #" + page.tags.join(`,`)} - {page.date}
+                </small>
               </Link>
             </li>
           ))}
@@ -54,7 +55,7 @@ export default class Search extends Component {
       : // Create an elastic lunr index and hydrate with graphql query results
         Index.load(this.props.searchIndex)
 
-  search = (evt) => {
+  search = evt => {
     const query = evt.target.value
     this.index = this.getOrCreateIndex()
     this.setState({

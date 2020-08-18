@@ -31,23 +31,23 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
             tagsGroup: allMdx(limit: 2000) {
-                group(field: frontmatter___tags) {
-                  fieldValue
-                }
+              group(field: frontmatter___tags) {
+                fieldValue
+              }
             }
-            subtagsGroup: allMdx{
-              edges{
-                node{
-                  frontmatter{
+            subtagsGroup: allMdx {
+              edges {
+                node {
+                  frontmatter {
                     tags
                     subtag
                   }
                 }
               }
-            } 
+            }
           }
         `
-      ).then((result) => {
+      ).then(result => {
         const posts = result.data.allMdx.edges
 
         posts.forEach(({ node }, index) => {
@@ -67,7 +67,7 @@ exports.createPages = ({ graphql, actions }) => {
         // Extract tag data from query
         const tags = result.data.tagsGroup.group
         // Make tag pages
-        tags.forEach((tag) => {
+        tags.forEach(tag => {
           createPage({
             path: `/${_.kebabCase(tag.fieldValue)}/`,
             component: tagTemplate,
@@ -80,7 +80,11 @@ exports.createPages = ({ graphql, actions }) => {
         const subtags = result.data.subtagsGroup.edges
 
         subtags.forEach(({ node }, index) => {
-          const path = "/" + node.frontmatter.tags.toLowerCase() + "/" + node.frontmatter.subtag.toLowerCase()
+          const path =
+            "/" +
+            node.frontmatter.tags.toLowerCase() +
+            "/" +
+            node.frontmatter.subtag.toLowerCase()
           createPage({
             path,
             component: subtagsTemplate,
@@ -94,7 +98,6 @@ exports.createPages = ({ graphql, actions }) => {
           })
           resolve()
         })
-        
       })
     )
   })

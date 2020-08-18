@@ -10,20 +10,27 @@ const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   return (
     <Layout>
-        <SEO title={tag}/>
-        <Breadcrumb className="bg-dark" >
-        <Breadcrumb.Item href="#"><Link to="/">Home</Link></Breadcrumb.Item>
-            <Breadcrumb.Item active>{tag}</Breadcrumb.Item>
-        </Breadcrumb>
-        <ListGroup style={{width: `90vw`, maxWidth: `500px`, margin: `0 auto`, textAlign: `center`}}>
-                    {data.allMdx.distinct.map((node => 
-                          <Link to={"/" + tag.toLowerCase() + "/" + node.toLowerCase()}>
-                          <ListGroup.Item action >
-                          {node}
-                          </ListGroup.Item>
-                      </Link>
-          ))}
-          </ListGroup>
+      <SEO title={tag} />
+      <Breadcrumb className="bg-dark">
+        <Breadcrumb.Item href="#">
+          <Link to="/">Home</Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item active>{tag}</Breadcrumb.Item>
+      </Breadcrumb>
+      <ListGroup
+        style={{
+          width: `90vw`,
+          maxWidth: `500px`,
+          margin: `0 auto`,
+          textAlign: `center`,
+        }}
+      >
+        {data.allMdx.distinct.map(node => (
+          <Link to={"/" + tag.toLowerCase() + "/" + node.toLowerCase()}>
+            <ListGroup.Item action>{node}</ListGroup.Item>
+          </Link>
+        ))}
+      </ListGroup>
     </Layout>
   )
 }

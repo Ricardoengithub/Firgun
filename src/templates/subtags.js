@@ -12,25 +12,37 @@ const SubTags = ({ pageContext, data }) => {
   const { edges } = data.allMdx
   return (
     <Layout>
-        <SEO title={ subtag + " | " + tag} />
-        <Breadcrumb className="bg-dark" >
-        <Breadcrumb.Item href="#"><Link to="/">Home</Link></Breadcrumb.Item>
-        <Breadcrumb.Item href="#"><Link to={"/" + tag.toLowerCase()}>{tag}</Link></Breadcrumb.Item>
+      <SEO title={subtag + " | " + tag} />
+      <Breadcrumb className="bg-dark">
+        <Breadcrumb.Item href="#">
+          <Link to="/">Home</Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item href="#">
+          <Link to={"/" + tag.toLowerCase()}>{tag}</Link>
+        </Breadcrumb.Item>
         <Breadcrumb.Item active>{subtag}</Breadcrumb.Item>
-        </Breadcrumb>
-        <ListGroup style={{width: `90vw`, maxWidth: `500px`, margin: `0 auto`, textAlign: `center`}} variant="flush">
-          {edges.map(({ node }) => {
-            if (node.frontmatter.subtag.toLowerCase() === subtag.toLowerCase()) {
-              return <Link to={node.frontmatter.path}>
-                <ListGroup.Item action >
-                {node.frontmatter.title}
-                </ListGroup.Item>
+      </Breadcrumb>
+      <ListGroup
+        style={{
+          width: `90vw`,
+          maxWidth: `500px`,
+          margin: `0 auto`,
+          textAlign: `center`,
+        }}
+        variant="flush"
+      >
+        {edges.map(({ node }) => {
+          if (node.frontmatter.subtag.toLowerCase() === subtag.toLowerCase()) {
+            return (
+              <Link to={node.frontmatter.path}>
+                <ListGroup.Item action>{node.frontmatter.title}</ListGroup.Item>
               </Link>
-            }else{
-              return null;
-            }
-          })}
-          </ListGroup>
+            )
+          } else {
+            return null
+          }
+        })}
+      </ListGroup>
     </Layout>
   )
 }

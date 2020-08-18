@@ -6,7 +6,6 @@ import Layout from "../components/layout"
 import { Breadcrumb } from "react-bootstrap"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-
 const Template = ({ data, pageContext }) => {
   const post = data.mdx.frontmatter
   const title = post.title
@@ -17,21 +16,33 @@ const Template = ({ data, pageContext }) => {
 
   return (
     <Layout>
-        <SEO
+      <SEO
         title={title + " | " + subtag + " | " + tag.toUpperCase()}
         description={post.excerpt}
         pathname={myUrl}
       />
       <Breadcrumb>
-        <Breadcrumb.Item href="#"><Link to="/">Home</Link></Breadcrumb.Item>
-        <Breadcrumb.Item href="#"><Link to={"/" + tag.toLowerCase()}>{tag}</Link></Breadcrumb.Item>
-        <Breadcrumb.Item href="#"><Link to={"/" + tag.toLowerCase() + "/" + subtag.toLowerCase()}>{subtag}</Link></Breadcrumb.Item>
-        <Breadcrumb.Item href="#" active>{title}</Breadcrumb.Item>
+        <Breadcrumb.Item href="#">
+          <Link to="/">Home</Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item href="#">
+          <Link to={"/" + tag.toLowerCase()}>{tag}</Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item href="#">
+          <Link to={"/" + tag.toLowerCase() + "/" + subtag.toLowerCase()}>
+            {subtag}
+          </Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item href="#" active>
+          {title}
+        </Breadcrumb.Item>
       </Breadcrumb>
-        <div style={{maxWidth: `1100px`, width: `90vw`, margin: `0 auto`}}>
-          <MDXRenderer title="My Stuff!" style={{maxWidth: 1100}}>{body}</MDXRenderer>
-        </div>
-          {/* {prev && (
+      <div style={{ maxWidth: `1100px`, width: `90vw`, margin: `0 auto` }}>
+        <MDXRenderer title="My Stuff!" style={{ maxWidth: 1100 }}>
+          {body}
+        </MDXRenderer>
+      </div>
+      {/* {prev && (
               <Link to={prev.frontmatter.path}>Previous</Link>
           )}
           {next && (
