@@ -10,14 +10,14 @@ const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   return (
     <Layout>
-        <SEO title={tag.toUpperCase()}/>
+        <SEO title={tag}/>
         <Breadcrumb className="bg-dark" >
         <Breadcrumb.Item href="#"><Link to="/">Home</Link></Breadcrumb.Item>
-            <Breadcrumb.Item active>{tag.toLowerCase()}</Breadcrumb.Item>
+            <Breadcrumb.Item active>{tag}</Breadcrumb.Item>
         </Breadcrumb>
-          <ListGroup style={{width: `300px`, margin: `0 auto`, textAlign: `center`}}>
-          {data.allMdx.distinct.map((node => 
-                          <Link to={"/" + tag + "/" + node}>
+        <ListGroup style={{width: `90vw`, maxWidth: `500px`, margin: `0 auto`, textAlign: `center`}}>
+                    {data.allMdx.distinct.map((node => 
+                          <Link to={"/" + tag.toLowerCase() + "/" + node.toLowerCase()}>
                           <ListGroup.Item action >
                           {node}
                           </ListGroup.Item>
@@ -52,7 +52,7 @@ export const pageQuery = graphql`
   query($tag: String) {
     allMdx(
       limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___title], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount

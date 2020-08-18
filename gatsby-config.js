@@ -11,7 +11,7 @@ module.exports = {
     description: `A documentation site about web dev.`,
     author: `@Ricardoentuiter`,
     keywords: ["Web", "Development"],
-    siteUrl: "https://www.firgun.me",
+    siteUrl: "https://firgun.me",
   },
   plugins: [
     {
@@ -21,14 +21,6 @@ module.exports = {
         path: `${__dirname}/src/pages/`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `data`,
-    //     path: `${__dirname}/src/data/`,
-    //     ignore: [`**/\.*`], // ignore files starting with a dot
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -112,5 +104,6 @@ module.exports = {
         plugins: [],
       },
     },
+    `gatsby-plugin-sitemap`,
   ],
 }

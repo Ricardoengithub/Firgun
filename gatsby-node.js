@@ -80,7 +80,7 @@ exports.createPages = ({ graphql, actions }) => {
         const subtags = result.data.subtagsGroup.edges
 
         subtags.forEach(({ node }, index) => {
-          const path = "/" + node.frontmatter.tags + "/" + node.frontmatter.subtag
+          const path = "/" + node.frontmatter.tags.toLowerCase() + "/" + node.frontmatter.subtag.toLowerCase()
           createPage({
             path,
             component: subtagsTemplate,

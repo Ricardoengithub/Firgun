@@ -20,6 +20,7 @@
     "bootstrap": "^4.5.2",
     "gatsby": "^2.24.41",
     "gatsby-plugin-mdx": "^1.2.34",
+    "gatsby-plugin-sitemap": "^2.4.11",
     "gatsby-plugin-styled-components": "^3.3.10",
     "gatsby-remark-prismjs": "^3.5.10",
     "gatsby-source-filesystem": "^2.3.24",

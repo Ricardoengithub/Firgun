@@ -24,8 +24,8 @@ const Template = ({ data, pageContext }) => {
       />
       <Breadcrumb>
         <Breadcrumb.Item href="#"><Link to="/">Home</Link></Breadcrumb.Item>
-        <Breadcrumb.Item href="#"><Link to={"/" + tag}>{tag}</Link></Breadcrumb.Item>
-        <Breadcrumb.Item href="#"><Link to={"/" + tag + "/" + subtag}>{subtag}</Link></Breadcrumb.Item>
+        <Breadcrumb.Item href="#"><Link to={"/" + tag.toLowerCase()}>{tag}</Link></Breadcrumb.Item>
+        <Breadcrumb.Item href="#"><Link to={"/" + tag.toLowerCase() + "/" + subtag.toLowerCase()}>{subtag}</Link></Breadcrumb.Item>
         <Breadcrumb.Item href="#" active>{title}</Breadcrumb.Item>
       </Breadcrumb>
         <div style={{maxWidth: `1100px`, width: `90vw`, margin: `0 auto`}}>

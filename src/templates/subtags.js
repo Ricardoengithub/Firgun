@@ -12,13 +12,13 @@ const SubTags = ({ pageContext, data }) => {
   const { edges } = data.allMdx
   return (
     <Layout>
-        <SEO title={ subtag + " | " + tag.toUpperCase()} />
+        <SEO title={ subtag + " | " + tag} />
         <Breadcrumb className="bg-dark" >
         <Breadcrumb.Item href="#"><Link to="/">Home</Link></Breadcrumb.Item>
-        <Breadcrumb.Item href="#"><Link to={"/" + tag}>{tag}</Link></Breadcrumb.Item>
-        <Breadcrumb.Item active>{subtag.toLowerCase()}</Breadcrumb.Item>
+        <Breadcrumb.Item href="#"><Link to={"/" + tag.toLowerCase()}>{tag}</Link></Breadcrumb.Item>
+        <Breadcrumb.Item active>{subtag}</Breadcrumb.Item>
         </Breadcrumb>
-        <ListGroup style={{width: `300px`, margin: `0 auto`, textAlign: `center`}}>
+        <ListGroup style={{width: `90vw`, maxWidth: `500px`, margin: `0 auto`, textAlign: `center`}} variant="flush">
           {edges.map(({ node }) => {
             if (node.frontmatter.subtag.toLowerCase() === subtag.toLowerCase()) {
               return <Link to={node.frontmatter.path}>
@@ -59,7 +59,7 @@ export const pageQuery = graphql`
   query($tag: String) {
     allMdx(
       limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___title], order: ASC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount

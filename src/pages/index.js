@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Alert, Card, Row } from "react-bootstrap"
-import { FaCss3Alt, FaHtml5, FaJs, FaPython, FaBlog } from "react-icons/fa"
+import { FaCss3Alt, FaHtml5, FaJs, FaPython, FaBlog, FaApple, FaGit } from "react-icons/fa"
 import { DiGo } from "react-icons/di"
 
 function Home({data}) {
@@ -13,10 +13,10 @@ function Home({data}) {
         <Alert variant="primary">
           <Alert.Heading>¡Hola, que bueno verte!</Alert.Heading>
           <p>
-          Firgun es un término hebréo el cuál describe un placer y orgullo por el logro de otra persona, Otra definición describre a Firgun como la generosidad de espíritu y empatía por que algo que le pasó o le pasará a otra persona. 
+          Firgun es un término hebréo el cuál describe un placer y orgullo por el logro de otra persona, Otra definición describe a Firgun como la generosidad de espíritu y empatía por que algo que le pasó o le pasará a otra persona. 
           </p>
         </Alert>
-        <Row style={{maxWidth: `90vw`, margin: `4rem auto`}}>
+        <Row style={{maxWidth: `90vw`, margin: `2rem auto`}}>
         <Card style={{ width: '18rem', margin: `0 auto` }}>
           <Card.Body>
             <Card.Title className="center"><FaCss3Alt style={{fontSize: 100, width: `50%`, margin: `0 4rem` }}/></Card.Title>
@@ -70,7 +70,7 @@ function Home({data}) {
           </Card.Body>
         </Card>
         </Row>
-        <Row style={{maxWidth: `90vw`, margin: `4rem auto`}}>
+        <Row style={{maxWidth: `90vw`, margin: `2rem auto`}}>
         <Card style={{ width: '18rem', margin: `0 auto` }}>
           <Card.Body>
             <Card.Title className="center"><FaPython style={{fontSize: 100, width: `50%`, margin: `0 4rem` }}/></Card.Title>
@@ -81,6 +81,32 @@ function Home({data}) {
             <Row style={{width: `50%`, display: `flex`, justifyContent: `space-around`}}>              
             <Link to="/python">Docs</Link>
             <Link to="/blog/python">Blog</Link>
+            </Row>
+          </Card.Body>
+        </Card>
+        <Card style={{ width: '18rem', margin: `0 auto` }}>
+          <Card.Body>
+            <Card.Title className="center"><FaApple style={{fontSize: 100, width: `50%`, margin: `0 4rem` }}/></Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">Apple</Card.Subtitle>
+            <Card.Text>
+            Apple Inc. es una empresa estadounidense que diseña y produce equipos electrónicos, software y servicios en línea.
+            </Card.Text>
+            <Row style={{width: `50%`, display: `flex`, justifyContent: `space-around`}}>              
+            <Link to="/apple">Docs</Link>
+            <Link to="/blog/apple">Blog</Link>
+            </Row>
+          </Card.Body>
+        </Card>
+        <Card style={{ width: '18rem', margin: `0 auto` }}>
+          <Card.Body>
+            <Card.Title className="center"><FaGit style={{fontSize: 100, width: `50%`, margin: `0 4rem` }}/></Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">Git</Card.Subtitle>
+            <Card.Text>
+            Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando éstas tienen un gran número de archivos de código fuente.
+            </Card.Text>
+            <Row style={{width: `50%`, display: `flex`, justifyContent: `space-around`}}>              
+            <Link to="/git">Docs</Link>
+            <Link to="/blog/git">Blog</Link>
             </Row>
           </Card.Body>
         </Card>
