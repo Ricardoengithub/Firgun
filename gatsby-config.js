@@ -135,5 +135,6 @@ module.exports = {
         matchFields: ['slug', 'modified'], // Array<String> default: ['modified']
       },
     },
+    `gatsby-plugin-styled-components`,
   ],
 }
