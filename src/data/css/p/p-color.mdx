@@ -1,6 +1,6 @@
 ---
 path: "/css/p/color"
-date: "2020-08-22"
+date: "2020-08-19"
 tags: "CSS"
 subtag: "p"
 title: "color"
@@ -9,10 +9,12 @@ excerpt: "Estudiando la propiedad de color en p"
 ---
 
 ## Color
-#### Cambia el color del párrafo
+Cambia el color del párrafo
 
 ---
-##### Ejemplo 1:
+<br/>
+
+**Podemos utilizar el nombre de los colores para asignar el color:**
 
 ```css
 p{
@@ -20,34 +22,71 @@ p{
 }
 ```
 <br/>
-
-
-**Sin CSS**
-
 <p>CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
-
-**Con CSS**
-
 <p style="color: purple">CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
 
-<br/><br/>
-
+---
 <br/>
 
-##### Ejemplo 2:
-<br/>
+**Podemos utilizar el código hexadecimal:**
 
 ```css
 p{
-    color: rgb(150,150,150);
+    color: #FF00FF;
 }
 ```
 <br/>
-
-**Sin CSS**
-
 <p>CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
+<p style="color: #FF00FF">CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
 
-**Con CSS**
+---
+<br/>
 
-<p style="color: rgb(150,150,150)">CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
+**Podemos utilizar la representación en rgb.**
+
+```css
+p{
+    color: rgb(180, 180, 0);
+}
+```
+<br/>
+<p>CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
+<p style="color: rgb(180, 180, 0)">CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
+
+---
+<br/>
+
+**Podemos utilizar la representación en rgba para añadir transparencia.**
+
+```css
+p{
+    color: rgba(180, 180, 0, .6);
+}
+```
+<br/>
+<p>CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
+<p style="color: rgba(180, 180, 0, .6)">CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
+
+---
+<br/>
+
+**Podemos utilizar la representación en hsl.**
+```css
+p{
+    color: hsl(184, 100%, 25%);
+}
+```
+<p>CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
+<p style="color: hsl(184, 100%, 25%)">CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
+
+---
+<br/>
+
+**Podemos utilizar la representación en hsla para añadir transparencia.**
+```css
+p{
+    color: hsla(184, 100%, 25%, .6);
+}
+```
+<p>CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>
+<p style="color: hsla(184, 100%, 25%, .6)">CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.</p>

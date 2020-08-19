@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Alert, Button } from "react-bootstrap"
+import { Alert } from "react-bootstrap"
 
 function AlertDismissible() {
   const [show, setShow] = useState(true)

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { Link } from "gatsby"
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap"
+import { Navbar, Nav } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 const Header = ({ siteTitle }) => (
@@ -35,10 +35,10 @@ const Header = ({ siteTitle }) => (
           </Link>
         </Nav.Item>
       </Nav>
-      <Form inline>
+      {/* <Form inline>
         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
         <Button variant="primary">Search</Button>
-      </Form>
+      </Form> */}
     </Navbar.Collapse>
   </Navbar>
 )
