@@ -37,7 +37,7 @@ const Template = ({ data, pageContext }) => {
           {title}
         </Breadcrumb.Item>
       </Breadcrumb>
-      <div style={{ maxWidth: `1100px`, width: `90vw`, margin: `0 auto` }}>
+      <div style={{ maxWidth: `1000px`, width: `90vw`, margin: `2rem auto` }}>
         <MDXRenderer title="My Stuff!" style={{ maxWidth: 1100 }}>
           {body}
         </MDXRenderer>

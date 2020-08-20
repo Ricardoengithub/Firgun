@@ -1,15 +1,22 @@
 ---
 path: "/blog/python/join-files"
-date: "2020-08-17"
+date: "2020-08-20"
 tags: "Blog"
 subtag: "Python"
-title: "Join files in a directory"
+title: "Junta todos los archivos en un directorio en uno solo"
 author: "Ricardoentuiter"
-excerpt: "Junta todos los archivos en un directorio en uno solo con python"
+excerpt: "Junta todos los archivos en un directorio en uno solo"
 ---
 
+## Junta todos los archivos en un directorio en uno solo
+
+---
+<br/>
+
+El siguiente código resuelve este problema: 
+
 ```python{numberLines: true}
-from os import listdir
+from os import listdir   
 from os.path import isfile, join
 
 path = "./haskell/"
@@ -27,5 +34,28 @@ everything = open(path + name, "w")
 for i in lista:
     everything.write(i)
 everything.close()
-
 ```
+<br/>
+
+#### Explicación línea por línea
+---
+
+**1:** Añade *listdir* para obtener los archivos en un directorio.
+
+**2:** Añade *isfile* para poder descartar directorios dentro del directorio raíz.
+
+**2:** Añade *join* para concatenar los path de forma inteligente.
+
+**4:** Define el directorio donde están los archivos.
+
+**5:** El nombre del archivo donde se guardarán todos los archivos del directorio.
+
+**6:** Guarda en una lista todos los nombres de los archivos.
+
+**8:** Crea una variable "lista" para los datos de todos los archivos.
+
+**9-13:** Abre cada archivo y lo lee, el contenido se añade a la variable "lista"
+
+**15:** Crea o abre el archivo donde se va a guardar la información.
+
+**16-18:** Escribre los datos de "lista" en el archivo final.
