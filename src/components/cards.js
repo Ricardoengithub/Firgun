@@ -8,7 +8,6 @@ import {
   FaPython,
   FaBlog,
   FaApple,
-  FaGit,
 } from "react-icons/fa"
 import { DiGo } from "react-icons/di"
 
@@ -31,9 +30,9 @@ const Cards = () => {
             </Card.Text>
             <Row
               style={{
-                width: `50%`,
+                width: `100%`,
                 display: `flex`,
-                justifyContent: `space-around`,
+                justifyContent: `space-evenly`,
               }}
             >
               <Link to="/css">Docs</Link>
@@ -57,9 +56,9 @@ const Cards = () => {
             </Card.Text>
             <Row
               style={{
-                width: `50%`,
+                width: `100%`,
                 display: `flex`,
-                justifyContent: `space-around`,
+                justifyContent: `space-evenly`,
               }}
             >
               <Link to="/html">Docs</Link>
@@ -82,12 +81,11 @@ const Cards = () => {
             </Card.Text>
             <Row
               style={{
-                width: `50%`,
+                width: `100%`,
                 display: `flex`,
-                justifyContent: `space-around`,
+                justifyContent: `space-evenly`,
               }}
             >
-              <Link to="/javascript">Docs</Link>
               <Link to="/blog/javascript">Blog</Link>
             </Row>
           </Card.Body>
@@ -104,12 +102,11 @@ const Cards = () => {
             </Card.Text>
             <Row
               style={{
-                width: `50%`,
+                width: `100%`,
                 display: `flex`,
-                justifyContent: `space-around`,
+                justifyContent: `space-evenly`,
               }}
             >
-              <Link to="/golang">Docs</Link>
               <Link to="/blog/golang">Blog</Link>
             </Row>
           </Card.Body>
@@ -130,12 +127,11 @@ const Cards = () => {
             </Card.Text>
             <Row
               style={{
-                width: `50%`,
+                width: `100%`,
                 display: `flex`,
-                justifyContent: `space-around`,
+                justifyContent: `space-evenly`,
               }}
             >
-              <Link to="/python">Docs</Link>
               <Link to="/blog/python">Blog</Link>
             </Row>
           </Card.Body>
@@ -154,39 +150,12 @@ const Cards = () => {
             </Card.Text>
             <Row
               style={{
-                width: `50%`,
+                width: `100%`,
                 display: `flex`,
-                justifyContent: `space-around`,
+                justifyContent: `space-evenly`,
               }}
             >
-              <Link to="/apple">Docs</Link>
               <Link to="/blog/apple">Blog</Link>
-            </Row>
-          </Card.Body>
-        </Card>
-        <Card style={{ width: "18rem", margin: `0 auto` }}>
-          <Card.Body>
-            <Card.Title className="center">
-              <FaGit
-                style={{ fontSize: 100, width: `50%`, margin: `0 4rem` }}
-              />
-            </Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">Git</Card.Subtitle>
-            <Card.Text>
-              Git es un software de control de versiones diseñado por Linus
-              Torvalds, pensando en la eficiencia y la confiabilidad del
-              mantenimiento de versiones de aplicaciones cuando éstas tienen un
-              gran número de archivos de código fuente.
-            </Card.Text>
-            <Row
-              style={{
-                width: `50%`,
-                display: `flex`,
-                justifyContent: `space-around`,
-              }}
-            >
-              <Link to="/git">Docs</Link>
-              <Link to="/blog/git">Blog</Link>
             </Row>
           </Card.Body>
         </Card>
