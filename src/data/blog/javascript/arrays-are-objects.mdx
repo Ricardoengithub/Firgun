@@ -1,0 +1,45 @@
+---
+path: "/blog/javascript/arrays-are-objects"
+date: "2020-08-20"
+tags: "Blog"
+subtag: "Javascript"
+title: "Arreglos son objetos"
+author: "Ricardoentuiter"
+excerpt: "Arreglos son objetos"
+---
+
+# Arreglos son objetos
+
+---
+<br/>
+
+Tenemos el siguiente código
+
+```javascript{numberLines: true}
+var x = []
+x.push("Hola")
+x.push("Mundo")
+```
+<br/>
+
+x es un *Array* y este tiene en la posición 0 a *"Hola"* y en la posición 1 a *"Mundo"*. ¿Es posible hacer la siguiente operacion?
+
+```javascript{numberLines: true}
+x.expression = "!";
+```
+<br/>
+
+Por supuesto que sí, ya que lo arreglos en javascript se podría decir que son objetos con métodos útiles. ¿Qué pasa si ahora le preguntamos por *length*?
+
+```javascript{numberLines: true}
+console.log(x.length); 
+```
+<br/>
+
+En este caso nos regresa el valor de 2, ya que solo toma los valores donde la *llave* es un número. Sabiendo esto ¿Qué pasa si hacemos lo siguiente y preguntamos por el *length*?
+
+```javascript{numberLines: true}
+x[9] = "JS"
+```
+<br/>
+El valor que muestra es 10, ya que aunque nos saltamos varios números el último es 9.
