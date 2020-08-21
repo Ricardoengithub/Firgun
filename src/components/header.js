@@ -14,22 +14,22 @@ const Header = ({ siteTitle }) => (
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="navbar-nav mr-auto">
-        <Nav.Item style={{ margin: `0 10px` }}>
+        <Nav.Item style={{ margin: `5px 10px` }}>
           <Link to="/css" style={{ color: `lightgray` }}>
             CSS
           </Link>
         </Nav.Item>
-        <Nav.Item style={{ margin: `0 10px` }}>
+        {/* <Nav.Item style={{ margin: `5px 10px` }}>
           <Link to="/html" style={{ color: `lightgray` }}>
             HTML
           </Link>
         </Nav.Item>
-        <Nav.Item style={{ margin: `0 10px` }}>
+        <Nav.Item style={{ margin: `5px 10px` }}>
           <Link to="/javascript" style={{ color: `lightgray` }}>
             Javascript
           </Link>
-        </Nav.Item>
-        <Nav.Item style={{ margin: `0 10px` }}>
+        </Nav.Item> */}
+        <Nav.Item style={{ margin: `5px 10px` }}>
           <Link to="/blog" style={{ color: `lightgray` }}>
             Blog
           </Link>

@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import { Breadcrumb, ListGroup } from "react-bootstrap"
 
 const SubTags = ({ pageContext, data }) => {
   const subtag = pageContext.subtag
@@ -13,36 +12,29 @@ const SubTags = ({ pageContext, data }) => {
   return (
     <Layout>
       <SEO title={subtag + " | " + tag} />
-      <Breadcrumb className="bg-dark">
-        <Breadcrumb.Item href="#">
-          <Link to="/">Home</Link>
-        </Breadcrumb.Item>
-        <Breadcrumb.Item href="#">
-          <Link to={"/" + tag.toLowerCase()}>{tag}</Link>
-        </Breadcrumb.Item>
-        <Breadcrumb.Item active>{subtag}</Breadcrumb.Item>
-      </Breadcrumb>
-      <ListGroup
+      <h1
         style={{
-          width: `90vw`,
-          maxWidth: `500px`,
-          margin: `0 auto`,
+          width: `90%`,
+          maxWidth: `900px`,
+          margin: `4rem auto 2rem`,
           textAlign: `center`,
         }}
-        variant="flush"
       >
+        {tag + " " + subtag}
+      </h1>
+      <ul style={{ width: `90%`, maxWidth: `900px`, margin: `0 auto` }}>
         {edges.map(({ node }) => {
           if (node.frontmatter.subtag.toLowerCase() === subtag.toLowerCase()) {
             return (
-              <Link to={node.frontmatter.path}>
-                <ListGroup.Item action>{node.frontmatter.title}</ListGroup.Item>
-              </Link>
+              <li>
+                <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
+              </li>
             )
           } else {
             return null
           }
         })}
-      </ListGroup>
+      </ul>
     </Layout>
   )
 }

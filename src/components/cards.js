@@ -12,7 +12,7 @@ import {
 
 const Cards = () => {
   return (
-    <div style={{ maxWidth: `90vw`, margin: `2rem auto` }}>
+    <div style={{ maxWidth: `90vw`, margin: `4rem auto` }}>
       <Row style={{ maxWidth: `90vw`, margin: `2rem auto` }}>
         <Card style={{ width: "18rem", margin: `0 auto` }}>
           <Card.Body>

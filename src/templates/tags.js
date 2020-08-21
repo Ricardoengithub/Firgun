@@ -4,33 +4,34 @@ import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import { Breadcrumb, ListGroup } from "react-bootstrap"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   return (
     <Layout>
       <SEO title={tag} />
-      <Breadcrumb className="bg-dark">
-        <Breadcrumb.Item href="#">
-          <Link to="/">Home</Link>
-        </Breadcrumb.Item>
-        <Breadcrumb.Item active>{tag}</Breadcrumb.Item>
-      </Breadcrumb>
-      <ListGroup
+      <h1
         style={{
-          width: `90vw`,
-          maxWidth: `500px`,
-          margin: `0 auto`,
+          width: `90%`,
+          maxWidth: `900px`,
+          margin: `4rem auto 2rem`,
           textAlign: `center`,
         }}
       >
+        {tag}
+      </h1>
+      <ul style={{ width: `90%`, maxWidth: `900px`, margin: `0 auto` }}>
         {data.allMdx.distinct.map(node => (
-          <Link to={"/" + tag.toLowerCase() + "/" + node.toLowerCase()}>
-            <ListGroup.Item action>{node}</ListGroup.Item>
-          </Link>
+          // <Link to={"/" + tag.toLowerCase() + "/" + node.toLowerCase()}>
+          //   <ListGroup.Item action>{node}</ListGroup.Item>
+          // </Link>
+          <li>
+            <Link to={"/" + tag.toLowerCase() + "/" + node.toLowerCase()}>
+              {node}
+            </Link>
+          </li>
         ))}
-      </ListGroup>
+      </ul>
     </Layout>
   )
 }
