@@ -1,0 +1,63 @@
+---
+path: "/blog/python/factorial-iterativo"
+date: "2020-08-20"
+tags: "Blog"
+subtag: "Python"
+title: "Factorial iterativo"
+author: "Ricardoentuiter"
+excerpt: "Factorial iterativo"
+---
+
+# Factorial Iterativo
+
+---
+<br/>
+
+El siguiente código resuelve este problema: 
+
+```python{numberLines: true}
+def factorial(n):
+    fact = 1
+    for i in range(2,n+1):
+        fact*= i
+    return fact
+```
+<br/>
+
+#### Explicación línea por línea
+---
+
+**1:** Crea la función factorial que recibe un número:
+
+**2:** Crea la variable para guardar el factorial
+
+**3-5:** Caso iterativo dónde se solo si es n > 2 se hace la multiplicación hasta n, en caso contrario nos quedamos con el valor a 1.
+
+<br/>
+
+#### Código completo
+---
+
+```python{numberLines: true}
+def factorial(n):
+    fact = 1
+    for i in range(2,n+1):
+        fact*= i
+    return fact
+    
+
+def main():
+    
+    n = int(input("Enter a number: "))
+    
+    if n >= 0:
+        print(f"Factorial: {factorial(n)}")
+    else:
+        print(f"Choose another number")
+  
+
+if __name__ == "__main__":
+    main()
+```
+
+[Descargar](https://gitlab.com/Ricardoengitlab/factorial/-/raw/master/Python/factorialIterative.py?inline=false "Código en gitlab")

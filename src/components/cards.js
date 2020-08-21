@@ -9,7 +9,6 @@ import {
   FaBlog,
   FaApple,
 } from "react-icons/fa"
-import { DiGo } from "react-icons/di"
 
 const Cards = () => {
   return (
@@ -31,6 +30,7 @@ const Cards = () => {
             <Row
               style={{
                 width: `100%`,
+                margin: `0 auto`,
                 display: `flex`,
                 justifyContent: `space-evenly`,
               }}
@@ -57,6 +57,7 @@ const Cards = () => {
             <Row
               style={{
                 width: `100%`,
+                margin: `0 auto`,
                 display: `flex`,
                 justifyContent: `space-evenly`,
               }}
@@ -82,6 +83,7 @@ const Cards = () => {
             <Row
               style={{
                 width: `100%`,
+                margin: `0 auto`,
                 display: `flex`,
                 justifyContent: `space-evenly`,
               }}
@@ -90,29 +92,6 @@ const Cards = () => {
             </Row>
           </Card.Body>
         </Card>
-        <Card style={{ width: "18rem", margin: `0 auto` }}>
-          <Card.Body>
-            <Card.Title className="center">
-              <DiGo style={{ fontSize: 100, width: `50%`, margin: `0 4rem` }} />
-            </Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">Golang</Card.Subtitle>
-            <Card.Text>
-              Go is an open source programming language that makes it easy to
-              build simple, reliable, and efficient software.
-            </Card.Text>
-            <Row
-              style={{
-                width: `100%`,
-                display: `flex`,
-                justifyContent: `space-evenly`,
-              }}
-            >
-              <Link to="/blog/golang">Blog</Link>
-            </Row>
-          </Card.Body>
-        </Card>
-      </Row>
-      <Row style={{ maxWidth: `90vw`, margin: `2rem auto` }}>
         <Card style={{ width: "18rem", margin: `0 auto` }}>
           <Card.Body>
             <Card.Title className="center">
@@ -128,6 +107,7 @@ const Cards = () => {
             <Row
               style={{
                 width: `100%`,
+                margin: `0 auto`,
                 display: `flex`,
                 justifyContent: `space-evenly`,
               }}
@@ -136,6 +116,8 @@ const Cards = () => {
             </Row>
           </Card.Body>
         </Card>
+      </Row>
+      <Row style={{ maxWidth: `90vw`, margin: `2rem auto` }}>
         <Card style={{ width: "18rem", margin: `0 auto` }}>
           <Card.Body>
             <Card.Title className="center">
@@ -151,6 +133,7 @@ const Cards = () => {
             <Row
               style={{
                 width: `100%`,
+                margin: `0 auto`,
                 display: `flex`,
                 justifyContent: `space-evenly`,
               }}
@@ -171,7 +154,7 @@ const Cards = () => {
               Revisa nuestro blog dónde encontrarás cosas curiosas sobre
               lenguajes de programación.
             </Card.Text>
-            <Row style={{ width: `90%`, margin: `0 auto` }}>
+            <Row style={{ width: `100%`, margin: `0 auto` }}>
               <Link to="/blog">Blog</Link>
             </Row>
           </Card.Body>

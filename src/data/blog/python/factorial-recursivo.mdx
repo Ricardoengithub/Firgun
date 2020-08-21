@@ -1,0 +1,63 @@
+---
+path: "/blog/python/factorial-recursivo"
+date: "2020-08-20"
+tags: "Blog"
+subtag: "Python"
+title: "Factorial recursivo"
+author: "Ricardoentuiter"
+excerpt: "Factorial recursivo"
+---
+
+# Factorial Recursivo
+
+---
+<br/>
+
+El siguiente código resuelve este problema: 
+
+```python{numberLines: true}
+def factorial(n):
+    if(n == 1 or n == 0):
+        return 1
+    else:
+        return n * factorial(n-1)
+```
+<br/>
+
+#### Explicación línea por línea
+---
+
+**1:** Crea la función factorial que recibe un número:
+
+**2-3:** Caso base para n = 0 y n = 1
+
+**4-5:** Caso recursivo dónde se vuelve a llamar a la función.
+
+<br/>
+
+#### Código completo
+---
+
+```python{numberLines: true}
+def factorial(n):
+    if(n == 1 or n == 0):
+        return 1
+    else:
+        return n * factorial(n-1)
+    
+
+def main():
+    
+    n = int(input("Enter a number: "))
+    
+    if n >= 0:
+        print(f"Factorial: {factorial(n)}")
+    else:
+        print(f"Choose another number")
+  
+
+if __name__ == "__main__":
+    main()
+```
+
+[Descargar](https://gitlab.com/Ricardoengitlab/factorial/-/raw/master/Python/factorial.py?inline=false "Código en gitlab")
