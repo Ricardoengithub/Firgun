@@ -41,11 +41,12 @@
  
  /* Code blocks */
  pre[class*="language-"] {
-	 padding: 0;
+	 padding: 1em;
 	 margin: .5em 0;
 	 overflow: auto;
+	 border-radius: 5px;
 	 border: 1px solid #dddddd;
-	 background-color: white;
+	 background-color: rgb(247,247,247);
  }
  
  /* Inline code */
@@ -142,12 +143,26 @@
 	 background: #ffff00;
 	 color: #393A34;
  }
+
+
+
+
+
+
+
+
+
+
+
+
+ 
  
  /* overrides color-values for the Line Numbers plugin
   * http://prismjs.com/plugins/line-numbers/
   */
  .line-numbers .line-numbers-rows {
-	 border-right-color: #a5a5a5;
+	padding: 1em 0 0 1em;
+	border-right-color: #a5a5a5;
  }
  
  .line-numbers-rows > span:before {
