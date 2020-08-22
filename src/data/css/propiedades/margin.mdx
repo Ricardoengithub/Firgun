@@ -1,15 +1,15 @@
 ---
-path: "/css/propiedades/padding"
+path: "/css/propiedades/margin"
 date: "2020-08-22"
 tags: "CSS"
 subtag: "Propiedades"
-title: "padding"
+title: "margin"
 author: "Ricardoentuiter"
-excerpt: "Estudiando la propiedad de padding"
+excerpt: "Estudiando la propiedad de margin"
 ---
 
-## padding
-Genera espacio hacia el interior desde los bordes del elemento raíz.
+## margin
+Se separa de los bordes del elemnto raíz sin generar espacio para el elemento.
 
 ---
 <br/>
@@ -18,13 +18,13 @@ Definiremos *border* y *margin* para dar más claridad al ejemplo.
 
 ```html
 <div style="border: 1px solid black; display: inline-block;">
-    <p style="border: 1px solid blue; margin: 10px">Padding</p>
+    <p style="border: 1px solid blue; margin: 0">margin</p>
 </div>
 ```
 <br/>
 
 <div style="border: 1px solid black; display: inline-block;">
-    <p style="border: 1px solid blue; margin: 10px">Padding</p>
+    <p style="border: 1px solid blue; margin: 0">margin</p>
 </div>
 
 <br/><br/>
@@ -33,13 +33,13 @@ Definir un solo valor lo aplica a todos lados (top, right, bottom, left).
 
 ```css
 p{
-    padding: 50px;
+    margin: 50px;
 }
 ```
 <br/>
 
 <div style="border: 1px solid black; display: inline-block;">
-    <p style="border: 1px solid blue; margin: 10px; padding: 50px;">Padding</p>
+    <p style="border: 1px solid blue; margin: 0; margin: 50px;">margin</p>
 </div>
 
 <br/><br/>
@@ -48,13 +48,13 @@ Definir dos valores aplica el primero arriba y abajo(top, bottom), y el segundo 
 
 ```css
 p{
-    padding: 50px 100px;
+    margin: 50px 100px;
 }
 ```
 <br/>
 
 <div style="border: 1px solid black; display: inline-block;">
-    <p style="border: 1px solid blue; margin: 10px; padding: 50px 100px;">Padding</p>
+    <p style="border: 1px solid blue; margin: 0; margin: 50px 100px;">margin</p>
 </div>
 
 <br/><br/>
@@ -63,13 +63,13 @@ Definir tres valores aplica el primero arriba, el segundo a la izquierda y derec
 
 ```css
 p{
-    padding: 50px 100px 0;
+    margin: 50px 100px 0;
 }
 ```
 <br/>
 
 <div style="border: 1px solid black; display: inline-block;">
-    <p style="border: 1px solid blue; margin: 10px; padding: 50px 100px 0;">Padding</p>
+    <p style="border: 1px solid blue; margin: 0; margin: 50px 100px 0;">margin</p>
 </div>
 
 <br/><br/>
@@ -78,12 +78,12 @@ Definir cuatro valores aplica cada uno en el siguiente orden: arriba, derecha, a
 
 ```css
 p{
-    padding: 50px 100px 50px 100px;
+    margin: 50px 100px 50px 100px;
 }
 ```
 <br/>
 
 <div style="border: 1px solid black; display: inline-block;">
-    <p style="border: 1px solid blue; margin: 10px; padding: 50px 100px 50px 100px;">Padding</p>
+    <p style="border: 1px solid blue; margin: 0; margin: 50px 100px 50px 100px;">margin</p>
 </div>
 

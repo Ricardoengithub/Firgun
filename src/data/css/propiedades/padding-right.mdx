@@ -9,31 +9,35 @@ excerpt: "Estudiando la propiedad de padding-right"
 ---
 
 ## padding-right
-Separa el contenido del borde derecho generando espacio.
+Genera espacio hacia el interior desde el borde inferior del elemento raíz.
 
 ---
 <br/>
 
+
+Definiremos *border* y *margin* para dar más claridad al ejemplo.
+
 ```html
-<div>
-    padding-right
+<div style="border: 1px solid black; display: inline-block;">
+    <p style="border: 1px solid blue; margin: 10px">padding-right</p>
 </div>
 ```
 <br/>
 
-<div style="border: 1px solid blueviolet; display: inline-block;">
-    padding-right
+<div style="border: 1px solid black; display: inline-block;">
+    <p style="border: 1px solid blue; margin: 10px">padding-right</p>
 </div>
 
 <br/><br/>
 
+
 ```css
-div{
+p{
     padding-right: 50px;
 }
 ```
 <br/>
 
-<div style="border: 1px solid blueviolet; padding-right: 50px; display: inline-block">
-    padding-right
+<div style="border: 1px solid black; display: inline-block;">
+    <p style="border: 1px solid blue; margin: 10px; padding-right: 50px">padding-right</p>
 </div>

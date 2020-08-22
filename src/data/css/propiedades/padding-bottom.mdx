@@ -9,31 +9,35 @@ excerpt: "Estudiando la propiedad de padding-bottom"
 ---
 
 ## padding-bottom
-Separa el contenido del borde inferior generando espacio.
+Genera espacio hacia el interior desde el borde inferior del elemento raíz.
 
 ---
 <br/>
 
+
+Definiremos *border* y *margin* para dar más claridad al ejemplo.
+
 ```html
-<div>
-    padding-bottom
+<div style="border: 1px solid black; display: inline-block;">
+    <p style="border: 1px solid blue; margin: 10px">padding-bottom</p>
 </div>
 ```
 <br/>
 
-<div style="border: 1px solid blueviolet; display: inline-block;">
-    padding-bottom
+<div style="border: 1px solid black; display: inline-block;">
+    <p style="border: 1px solid blue; margin: 10px">padding-bottom</p>
 </div>
 
 <br/><br/>
 
+
 ```css
-div{
+p{
     padding-bottom: 50px;
 }
 ```
 <br/>
 
-<div style="border: 1px solid blueviolet; padding-bottom: 50px; display: inline-block">
-    padding-bottom
+<div style="border: 1px solid black; display: inline-block;">
+    <p style="border: 1px solid blue; margin: 10px; padding-bottom: 50px">padding-bottom</p>
 </div>

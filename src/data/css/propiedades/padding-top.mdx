@@ -9,31 +9,35 @@ excerpt: "Estudiando la propiedad de padding-top"
 ---
 
 ## padding-top
-Separa el contenido del borde superior generando espacio.
+Genera espacio hacia el interior desde el borde inferior del elemento raíz.
 
 ---
 <br/>
 
+
+Definiremos *border* y *margin* para dar más claridad al ejemplo.
+
 ```html
-<div>
-    padding-top
+<div style="border: 1px solid black; display: inline-block;">
+    <p style="border: 1px solid blue; margin: 10px">padding-top</p>
 </div>
 ```
 <br/>
 
-<div style="border: 1px solid blueviolet; display: inline-block;">
-    padding-top
+<div style="border: 1px solid black; display: inline-block;">
+    <p style="border: 1px solid blue; margin: 10px">padding-top</p>
 </div>
 
 <br/><br/>
 
+
 ```css
-div{
+p{
     padding-top: 50px;
 }
 ```
 <br/>
 
-<div style="border: 1px solid blueviolet; padding-top: 50px; display: inline-block">
-    padding-top
+<div style="border: 1px solid black; display: inline-block;">
+    <p style="border: 1px solid blue; margin: 10px; padding-top: 50px">padding-top</p>
 </div>
