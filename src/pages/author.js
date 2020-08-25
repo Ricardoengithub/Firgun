@@ -285,7 +285,7 @@ const Author = () => {
           <a href="https://twitter.com/Ricardoentuiter">
             <FaTwitter />
           </a>
-          <a href="#">
+          <a href="http://linkedin.com/in/ricardo-ruiz-194b531aa">
             <FaLinkedin />
           </a>
           <a href="mailto:gaanzz11@gmail.com">
