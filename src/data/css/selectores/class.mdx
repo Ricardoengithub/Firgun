@@ -1,0 +1,62 @@
+---
+path: "/css/selectores/.class"
+date: "2020-08-25"
+tags: "CSS"
+subtag: "Selectores"
+title: ".class"
+author: "Ricardoentuiter"
+excerpt: "Estudiando el selector `.class`"
+---
+
+## .class
+Selecciona todos los elementos de una clase.
+
+---
+<br/>
+
+Tenemos el siguiente código: 
+```html
+<p class=".purple">Párrafo con clase<p>
+<p>Párrafo sin clase<p>
+<p class=".purple">Párrafo con clase<p>
+```
+<br/>
+
+Con el siguiente estilo:
+
+```css
+.purple{
+    color: purple;
+}
+```
+<br/>
+
+<p style="color: purple;">Párrafo con clase</p>
+<p>Párrafo sin clase</p>
+<p style="color: purple;">Párrafo con clase</p>
+
+---
+<br/>
+
+
+
+**Es posible aplicardo a elementos de distinto tipo:**
+```html
+<div class=".byellow">Div con clase<div>
+<p>Párrafo sin clase<p>
+<h1 class=".byellow">Heading con clase<h1>
+```
+<br/>
+
+Con el siguiente estilo:
+
+```css
+.byellow{
+    background-color: yellow;
+}
+```
+<br/>
+
+<div style="background-color: yellow;">Div con clase</div>
+<p>Párrafo sin clase</p>
+<h1 style="background-color: yellow;">Heading con clase</h1>
