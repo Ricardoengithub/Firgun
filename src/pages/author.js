@@ -15,6 +15,7 @@ const Home = styled.div`
   min-height: 100vh;
   background: linear-gradient(100deg, #4056a1 45%, white 45%);
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 
@@ -26,25 +27,42 @@ const Home = styled.div`
   & h5 {
     margin: 1rem 0;
   }
+
+  @media (max-width: 800px) {
+    background: white;
+  }
 `
 const Info = styled.div`
-  width: 45%;
-  padding: 0 4rem;
+  flex: 0 1 40%;
+  padding: 0 2rem;
   position: relative;
   border-radius: 1rem;
   color: white;
+
+  @media (max-width: 800px) {
+    flex: 0 1 100%;
+    margin: 0 auto;
+    padding: 6rem 3rem;
+    border-radius: 0;
+    background-color: #4056a1;
+  }
 `
 
-const Right = styled.div`
-  width: 45%;
+const Contact = styled.div`
+  flex: 0 1 45%;
   padding: 4rem;
+
+  @media (max-width: 800px) {
+    flex: 0 1 100%;
+  }
 `
 
 const Second = styled.div`
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 
@@ -62,21 +80,35 @@ const Second = styled.div`
   }
 `
 const Projects = styled.div`
-  width: 50%;
-  padding: 0 4rem;
+  flex: 0 1 50%;
+  padding: 0 1rem;
   position: relative;
   border-radius: 1rem;
+
+  @media (max-width: 800px) {
+    flex: 0 1 100%;
+    background: #ff1d58;
+    border-radius: 0;
+    padding: 2rem;
+    color: white;
+  }
 `
 
 const Progress = styled.div`
-  width: 35%;
+  flex: 0 1 35%;
+
+  @media (max-width: 800px) {
+    flex: 0 1 80%;
+    margin: 4rem auto;
+  }
 `
 
 const Third = styled.div`
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 
@@ -95,16 +127,28 @@ const Third = styled.div`
 `
 
 const Languagues = styled.div`
-  width: 35%;
+  flex: 0 1 35%;
+
+  @media (max-width: 800px) {
+    flex: 0 1 80%;
+    margin: 4rem auto;
+    order: 2;
+  }
 `
 const Interests = styled.div`
-  width: 25%;
+  flex: 0 1 25%;
   padding: 0 4rem;
   border-radius: 1rem;
+  min-width: 400px;
+
+  @media (max-width: 800px) {
+    flex: 0 1 100%;
+    margin: 4rem auto;
+  }
 `
 
 const Social = styled.div`
-  width: 25%;
+  flex: 0 1 25%;
   font-size: 1.5rem;
   display: flex;
   flex-wrap: wrap;
@@ -118,6 +162,12 @@ const Social = styled.div`
     width: 100%;
     text-align: center;
     display: block;
+  }
+
+  @media (max-width: 800px) {
+    flex: 0 1 100%;
+    margin: 4rem auto;
+    order: 3;
   }
 `
 
@@ -134,9 +184,14 @@ const Author = () => {
             software.
           </p>
         </Info>
-        <Right>
+        <Contact>
           <h3 style={{ textAlign: `center` }}>Contacto: </h3>
-          <Form data-netlify="true" data-netlify-honeypot="bot-field">
+          <Form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
             <input type="hidden" name="form-name" value="contact" />
             <Form.Group>
               <Form.Label>Nombre:</Form.Label>
@@ -158,7 +213,7 @@ const Author = () => {
               Enviar
             </Button>
           </Form>
-        </Right>
+        </Contact>
       </Home>
       <Second>
         <Projects>
