@@ -1,14 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Card, Row } from "react-bootstrap"
-import {
-  FaCss3Alt,
-  FaHtml5,
-  FaJs,
-  FaPython,
-  FaBlog,
-  FaApple,
-} from "react-icons/fa"
+import { FaCss3Alt, FaJs, FaPython, FaBlog } from "react-icons/fa"
 
 const Cards = () => {
   return (
@@ -116,7 +109,7 @@ const Cards = () => {
             </Row>
           </Card.Body>
         </Card>
-      {/* </Row>
+        {/* </Row>
       <Row style={{ maxWidth: `90vw`, margin: `2rem auto` }}> */}
         {/* <Card style={{ width: "18rem", margin: `0 auto` }}>
           <Card.Body>
