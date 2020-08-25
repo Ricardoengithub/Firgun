@@ -1,5 +1,5 @@
 import React from "react"
-
+import SEO from "../components/seo"
 import styled from "styled-components"
 import { Button, Form, ProgressBar } from "react-bootstrap"
 import {
@@ -175,6 +175,7 @@ const Social = styled.div`
 const Author = () => {
   return (
     <div style={{ backgroundColor: `rgb(253,253,253)` }}>
+      <SEO title={"Ricardo"} description={"CV"} />
       <Home>
         <Info>
           <h1>Hola me llamo Ricardo!</h1>
