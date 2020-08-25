@@ -13,10 +13,10 @@ import {
 const Home = styled.div`
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(100deg, #4056a1 45%, white 45%);
+  background: linear-gradient(95deg, #4056a1 45%, white 45%);
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 
   & h3,
@@ -34,7 +34,7 @@ const Home = styled.div`
 `
 const Info = styled.div`
   flex: 0 1 40%;
-  padding: 0 2rem;
+  padding: 0 4rem 0 2rem;
   position: relative;
   border-radius: 1rem;
   color: white;
@@ -84,6 +84,7 @@ const Projects = styled.div`
   padding: 0 1rem;
   position: relative;
   border-radius: 1rem;
+  order: 2;
 
   @media (max-width: 800px) {
     flex: 0 1 100%;
@@ -109,7 +110,7 @@ const Third = styled.div`
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 
   & h3 {
@@ -137,7 +138,7 @@ const Languagues = styled.div`
 `
 const Interests = styled.div`
   flex: 0 1 25%;
-  padding: 0 4rem;
+  padding: 0 3rem;
   border-radius: 1rem;
   min-width: 400px;
 
