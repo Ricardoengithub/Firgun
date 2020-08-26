@@ -53,7 +53,7 @@ const Contact = styled.div`
   padding: 4rem;
 
   @media (max-width: 800px) {
-    flex: 0 1 90%;
+    flex: 0 1 100%;
   }
 `
 
@@ -144,6 +144,7 @@ const Interests = styled.div`
 
   @media (max-width: 800px) {
     flex: 0 1 80%;
+    padding: 0 2rem;
     margin: 4rem auto;
   }
 `
