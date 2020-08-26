@@ -11,10 +11,10 @@ excerpt: "Estudiando la propiedad de padding"
 ## padding
 Genera espacio hacia el interior desde los bordes del elemento raíz.
 
+[Browser support](https://caniuse.com/#search=padding)
+
 ---
 <br/>
-
-Definiremos *border* y *margin* para dar más claridad al ejemplo.
 
 ```html
 <div style="border: 1px solid black; display: inline-block;">
@@ -29,11 +29,9 @@ Definiremos *border* y *margin* para dar más claridad al ejemplo.
 
 <br/><br/>
 
-Definir un solo valor lo aplica a todos lados (top, right, bottom, left).
-
 ```css
 p{
-    padding: 50px;
+    padding: 50px; /* top-right-bottom-left */
 }
 ```
 <br/>
@@ -44,11 +42,10 @@ p{
 
 <br/><br/>
 
-Definir dos valores aplica el primero arriba y abajo(top, bottom), y el segundo a la izquierda y derecha(left, right).
 
 ```css
 p{
-    padding: 50px 100px;
+    padding: 50px 100px; /* top-bottom    right-left */
 }
 ```
 <br/>
@@ -59,11 +56,10 @@ p{
 
 <br/><br/>
 
-Definir tres valores aplica el primero arriba, el segundo a la izquierda y derecha(left, right), y el tercero abajo(bottom).
 
 ```css
 p{
-    padding: 50px 100px 0;
+    padding: 50px 100px 0; /* top    right-left    bottom */
 }
 ```
 <br/>
@@ -74,11 +70,10 @@ p{
 
 <br/><br/>
 
-Definir cuatro valores aplica cada uno en el siguiente orden: arriba, derecha, abajo, izquierda.
 
 ```css
 p{
-    padding: 50px 100px 100px 100px;
+    padding: 50px 100px 100px 100px; /*top     right    bottom     left */
 }
 ```
 <br/>
@@ -91,4 +86,3 @@ p{
 
 ---
 
-[Browser support](https://caniuse.com/#search=padding)
