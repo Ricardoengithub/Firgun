@@ -53,7 +53,7 @@ const Contact = styled.div`
   padding: 4rem;
 
   @media (max-width: 800px) {
-    flex: 0 1 100%;
+    flex: 0 1 90%;
   }
 `
 
@@ -143,7 +143,7 @@ const Interests = styled.div`
   min-width: 400px;
 
   @media (max-width: 800px) {
-    flex: 0 1 100%;
+    flex: 0 1 80%;
     margin: 4rem auto;
   }
 `
@@ -178,7 +178,7 @@ const Author = () => {
       <SEO title={"Ricardo"} description={"CV"} />
       <Home>
         <Info>
-          <h1>Hola me llamo Ricardo!</h1>
+          <h1>Hola, soy Ricardo!</h1>
           <p style={{ textAlign: `justify` }}>
             Estudio ciencias de la computación en la Universidad Nacional
             Autónoma de México, actualmente me desarrollo en crear proyectos que
