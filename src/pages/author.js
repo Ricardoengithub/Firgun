@@ -54,6 +54,7 @@ const Contact = styled.div`
 
   @media (max-width: 800px) {
     flex: 0 1 100%;
+    padding: 2rem;
   }
 `
 
