@@ -140,11 +140,10 @@ const Interests = styled.div`
   flex: 0 1 25%;
   padding: 0 3rem;
   border-radius: 1rem;
-  min-width: 400px;
+  min-width: 300px;
 
   @media (max-width: 800px) {
-    flex: 0 1 80%;
-    padding: 0 2rem;
+    flex: 0 1 100%;
     margin: 4rem auto;
   }
 `
