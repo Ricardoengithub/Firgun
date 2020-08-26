@@ -139,7 +139,7 @@ const Languagues = styled.div`
 `
 const Interests = styled.div`
   flex: 0 1 25%;
-  padding: 0 3rem;
+  padding: 0 2rem;
   border-radius: 1rem;
   min-width: 300px;
 
