@@ -155,6 +155,7 @@ const Social = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  min-width: 300px;
 
   & a {
     color: black;
