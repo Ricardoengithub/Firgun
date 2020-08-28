@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Cards from "../components/cards"
+import LastPosts from "../components/last-posts"
 // import AlertDismissible from "../components/alert"
 
 function Home({ data }) {
@@ -9,6 +10,7 @@ function Home({ data }) {
     <Layout>
       <SEO title={"Home"} description={data.site.siteMetadata.description} />
       <Cards />
+      <LastPosts />
       {/* <AlertDismissible /> */}
     </Layout>
   )
