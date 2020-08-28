@@ -3,7 +3,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Cards from "../components/cards"
 import LastPosts from "../components/last-posts"
-// import AlertDismissible from "../components/alert"
 
 function Home({ data }) {
   return (
@@ -11,7 +10,6 @@ function Home({ data }) {
       <SEO title={"Home"} description={data.site.siteMetadata.description} />
       <Cards />
       <LastPosts />
-      {/* <AlertDismissible /> */}
     </Layout>
   )
 }
