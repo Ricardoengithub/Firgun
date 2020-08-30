@@ -1,6 +1,7 @@
 import React from "react"
 import { Row } from "react-bootstrap"
 import { FaCss3Alt, FaJs, FaPython, FaBlog } from "react-icons/fa"
+import { DiGo } from "react-icons/di"
 import CardComponent from "./card"
 
 const Cards = () => {
@@ -32,8 +33,16 @@ const Cards = () => {
           linkBlog="/blog/python"
         />
         <CardComponent
+          icon={<DiGo />}
+          title={"Golang"}
+          text={
+            "Go es un lenguaje de programación concurrente y compilado inspirado en la sintaxis de C, que intenta ser dinámico como Python y con el rendimiento de C o C++. "
+          }
+          linkBlog="/blog/golang"
+        />
+        <CardComponent
           icon={<FaBlog />}
-          title={"CSS3"}
+          title={"Blog"}
           text={
             "Revisa nuestro blog dónde encontrarás cosas curiosas sobre lenguajes de programación."
           }

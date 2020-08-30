@@ -1,0 +1,32 @@
+---
+path: "/blog/javascript/arguments-keyword"
+date: "2020-08-30"
+tags: "Blog"
+subtag: "Javascript"
+title: "Arguments keyword"
+author: "Ricardoentuiter"
+excerpt: "Arguments keyword"
+---
+
+## Arguments keyword
+
+---
+<br/>
+
+Tenemos el siguiente código:
+
+```javascript
+function f(a, b, c, d) {
+    console.log(arguments)    /* [Arguments] { '0': 'a', '1': 'b', '2': 'c', '3': 'd' } */ 
+    console.log(arguments[0]) /* `a` */ 
+    console.log(arguments[1]) /* `b` */ 
+    console.log(arguments[2]) /* `c` */ 
+    console.log(arguments[3]) /* `d` */ 
+    console.log(arguments[4]) /* undefined */ 
+}
+
+f('a', 'b', 'c', 'd')
+```
+<br/>
+
+Nos regresa un objeto con los argumentos que le pasamos a la función, donde la llave representa el índice del parámetro en la firma de la función.
