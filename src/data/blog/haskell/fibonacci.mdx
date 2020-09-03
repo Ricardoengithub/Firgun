@@ -1,0 +1,50 @@
+---
+path: "/blog/haskell/fibonacci"
+date: "2020-09-03"
+tags: "Blog"
+subtag: "Haskell"
+title: "Fibonacci"
+author: "Ricardoentuiter"
+excerpt: "Fibonacci"
+---
+
+# Fibonacci
+
+---
+<br/>
+
+La serie de fibonacci es la siguiente: 
+*0, 1, 1, 2, 3, 5, 8, ...*
+
+**fibonacci**(0) = 0
+
+**fibonacci**(1) = 1
+
+**fibonacci**(2) = 1
+
+Cada elemento de la serie es la suma de sus dos anteriores por lo que el siguiente código resuelve el problema regresándonos el elemento en la posición deseada: 
+
+```haskell{numberLines: true}
+fib::Int->Int
+fib 0 = 0
+fib 1 = 1
+fib n = fib(n-1) + fib(n-2) 
+```
+<br/>
+
+#### Explicación línea por línea
+---
+
+**1:** Firma de la función
+
+**2:** Caso base
+
+**3:** Caso base
+
+**4:** Caso recursivo
+
+Los dos casos base establecen el punto de partida para que al pedir cualquier elemento desde el dos en adelante ya tengo dos elementos previos para poder hacer la suma.
+
+---
+
+[Descargar](https://gitlab.com/Ricardoengitlab/fibonacci/-/raw/master/Haskell/fibonacci.hs?inline=false "Código en gitlab")

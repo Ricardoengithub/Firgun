@@ -4,7 +4,7 @@ import { Card, Row } from "react-bootstrap"
 
 const CardComponent = ({ icon, title, text, linkDocs, linkBlog }) => {
   return (
-    <Card style={{ width: "18rem", margin: `0 auto` }}>
+    <Card style={{ width: "18rem", margin: `1rem 1rem` }}>
       <Card.Body>
         <Card.Title style={{ fontSize: `6rem`, margin: `0 4.5rem` }}>
           {icon}

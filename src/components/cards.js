@@ -1,13 +1,12 @@
 import React from "react"
-import { Row } from "react-bootstrap"
 import { FaCss3Alt, FaJs, FaPython, FaBlog } from "react-icons/fa"
-import { DiGo } from "react-icons/di"
+import { DiGo, DiHaskell } from "react-icons/di"
 import CardComponent from "./card"
 
 const Cards = () => {
   return (
     <div style={{ maxWidth: `90vw`, margin: `4rem auto` }}>
-      <Row>
+      <div style={{display: `flex`, flexFlow: `row wrap`, justifyContent: `space-evenly`}}>
         <CardComponent
           icon={<FaCss3Alt />}
           title={"CSS3"}
@@ -41,6 +40,14 @@ const Cards = () => {
           linkBlog="/blog/golang"
         />
         <CardComponent
+          icon={<DiHaskell />}
+          title={"Haskell"}
+          text={
+            "Haskell ​ es un lenguaje de programación estandarizado multi-propósito, funcionalmente puro, con evaluación no estricta y memorizada, y fuerte tipificación estática. "
+          }
+          linkBlog="/blog/haskell"
+        />
+        <CardComponent
           icon={<FaBlog />}
           title={"Blog"}
           text={
@@ -48,7 +55,7 @@ const Cards = () => {
           }
           linkBlog="/blog"
         />
-      </Row>
+      </div>
     </div>
   )
 }
