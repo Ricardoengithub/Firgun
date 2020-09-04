@@ -6,7 +6,13 @@ import CardComponent from "./card"
 const Cards = () => {
   return (
     <div style={{ maxWidth: `90vw`, margin: `4rem auto` }}>
-      <div style={{display: `flex`, flexFlow: `row wrap`, justifyContent: `space-evenly`}}>
+      <div
+        style={{
+          display: `flex`,
+          flexFlow: `row wrap`,
+          justifyContent: `space-evenly`,
+        }}
+      >
         <CardComponent
           icon={<FaCss3Alt />}
           title={"CSS3"}
