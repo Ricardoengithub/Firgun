@@ -1,4 +1,4 @@
-import React, { Suspense } from "react"
+import React from "react"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import { Button, Form, ProgressBar } from "react-bootstrap"
@@ -174,22 +174,7 @@ const Social = styled.div`
   }
 `
 
-class Author extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { isloading: true }
-  }
-
-  componentDidMount() {
-    this.setState({ isLoading: false })
-  }
-
-  render() {
-    return <Suspense fallback={<h1>Loading...</h1>}>{homePage()}</Suspense>
-  }
-}
-
-function homePage() {
+const Author = () => {
   return (
     <div style={{ backgroundColor: `rgb(253,253,253)` }}>
       <SEO title={"Ricardo"} description={"CV"} />
@@ -197,9 +182,10 @@ function homePage() {
         <Info>
           <h1>Hola, soy Ricardo!</h1>
           <p style={{ textAlign: `justify` }}>
-            Estudio ciencias de la computación en la Universidad Nacional noma
-            de México, actualmente me desarrollo en crear proyectos que a las
-            personas a iniciarse en este mundo del desarrollo de software.
+            Estudio ciencias de la computación en la Universidad Nacional
+            Autónoma de México, actualmente me desarrollo en crear proyectos que
+            ayuden a las personas a iniciarse en este mundo del desarrollo de
+            software.
           </p>
         </Info>
         <Contact>
@@ -238,19 +224,19 @@ function homePage() {
           <h3>Proyectos</h3>
           <h5>Firgun</h5>
           <p>
-            Este es un proyecto personal donde las personas pueden venir a a nder
-            sobre lenguajes de programación, especialmente en web. n permite que
-            las personas aprendan sobre cosas curiosas que uajes de programación
-            tienen en su interior para así lograr motivar a las personas a
-            aprender.
+            Este es un proyecto personal donde las personas pueden venir a a
+            aprender sobre lenguajes de programación, especialmente en web.
+            También permite que las personas aprendan sobre cosas curiosas que
+            los lenguajes de programación tienen en su interior para así lograr
+            motivar a las personas a aprender.
           </p>
 
           <h5>The Art of Design</h5>
           <p>
-            Este es un proyecto personal donde investigo sobre el diseño de las s
-            o lugares, para así mostrar los detalles que esconden en su y
-            entender mejor el proceso de creación de un objeto que tiene como
-            destino la interacción con las personas.
+            Este es un proyecto personal donde investigo sobre el diseño de las
+            cosas o lugares, para así mostrar los detalles que esconden en su
+            diseño y entender mejor el proceso de creación de un objeto que
+            tiene como destino la interacción con las personas.
           </p>
         </Projects>
         <Progress>
