@@ -19,6 +19,26 @@ const Header = ({ siteTitle }) => (
             CSS
           </Link>
         </Nav.Item>
+        <Nav.Item style={{ margin: `5px 10px` }}>
+          <Link to="/blog/javascript" style={{ color: `lightgray` }}>
+            Javascript
+          </Link>
+        </Nav.Item>
+        <Nav.Item style={{ margin: `5px 10px` }}>
+          <Link to="/blog/python" style={{ color: `lightgray` }}>
+            Python
+          </Link>
+        </Nav.Item>
+        <Nav.Item style={{ margin: `5px 10px` }}>
+          <Link to="/blog/golang" style={{ color: `lightgray` }}>
+            Golang
+          </Link>
+        </Nav.Item>
+        <Nav.Item style={{ margin: `5px 10px` }}>
+          <Link to="/blog/haskell" style={{ color: `lightgray` }}>
+            Haskell
+          </Link>
+        </Nav.Item>
         {/* <Nav.Item style={{ margin: `5px 10px` }}>
           <Link to="/html" style={{ color: `lightgray` }}>
             HTML
