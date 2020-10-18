@@ -28,7 +28,7 @@ const LastPosts = () => (
     render={data => {
       const { edges } = data.allMdx
       return (
-        <div style={{ width: `80%`, margin: `0 auto` }}>
+        <div id="posts">
           <h5>Estos son los últimos posts: </h5>
           <ul>
             {edges.map(edge => {

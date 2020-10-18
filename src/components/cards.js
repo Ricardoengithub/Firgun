@@ -5,7 +5,7 @@ import CardComponent from "./card"
 
 const Cards = () => {
   return (
-    <div style={{ maxWidth: `90vw`, margin: `4rem auto` }}>
+    <div id="cards">
       <div
         style={{
           display: `flex`,

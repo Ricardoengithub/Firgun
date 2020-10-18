@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import "../styles/doc.scss"
 
 const Template = ({ data, pageContext }) => {
   const post = data.mdx.frontmatter
@@ -19,7 +20,7 @@ const Template = ({ data, pageContext }) => {
         description={post.excerpt}
         pathname={myUrl}
       />
-      <div style={{ maxWidth: `1000px`, width: `90vw`, margin: `4rem auto` }}>
+      <div id="mdx">
         <MDXRenderer title="My Stuff!" style={{ maxWidth: 1100 }}>
           {body}
         </MDXRenderer>
