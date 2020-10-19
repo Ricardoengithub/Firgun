@@ -19,6 +19,7 @@
     "babel-plugin-styled-components": "^1.11.1",
     "bootstrap": "^4.5.2",
     "gatsby": "^2.24.41",
+    "gatsby-plugin-manifest": "^2.4.35",
     "gatsby-plugin-mdx": "^1.2.34",
     "gatsby-plugin-nprogress": "^2.3.10",
     "gatsby-plugin-sass": "^2.3.17",
