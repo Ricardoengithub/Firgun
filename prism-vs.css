@@ -31,6 +31,7 @@ pre[class*="language-"] {
   background: #2a2734;
   color: #9a86fd;
   border-radius: 5px;
+  overflow-x: auto;
 }
 
 pre > code[class*="language-"] {
