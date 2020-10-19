@@ -127,13 +127,19 @@ module.exports = {
               escapeEntities: {},
             },
           },
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              strict: `ignore`,
+            },
+          },
         ],
       },
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [],
+        plugins: [`gatsby-remark-katex`],
       },
     },
     `gatsby-plugin-sitemap`,
