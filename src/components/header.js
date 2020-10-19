@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { Link } from "gatsby"
-import { Navbar, Nav} from "react-bootstrap"
+import { Navbar, Nav } from "react-bootstrap"
 import { FaLeaf } from "react-icons/fa"
 
 class Header extends React.Component {
@@ -33,31 +33,17 @@ class Header extends React.Component {
       <div>
         {isDesktop ? (
           <div id="head">
-            <ul id="header">
-              <li>
-                <Link to="/">
-                  <FaLeaf style={{color: "white"}}/>
-                </Link>
-              </li>
-              <li>
-                <Link to="/css">CSS</Link>
-              </li>
-              <li>
-                <Link to="/blog/javascript">Javascript</Link>
-              </li>
-              <li>
-                <Link to="/blog/python">Python</Link>
-              </li>
-              <li>
-                <Link to="/blog/golang">Golang</Link>
-              </li>
-              <li>
-                <Link to="/blog/haskell">Haskell</Link>
-              </li>
-              <li>
-                <Link to="/blog">Blog</Link>
-              </li>
-            </ul>
+            <div id="header">
+              <Link to="/">
+                <FaLeaf style={{ color: "white" }} />
+              </Link>
+              <Link to="/css">CSS</Link>
+              <Link to="/blog/javascript">Javascript</Link>
+              <Link to="/blog/python">Python</Link>
+              <Link to="/blog/golang">Golang</Link>
+              <Link to="/blog/haskell">Haskell</Link>
+              <Link to="/blog">Blog</Link>
+            </div>
           </div>
         ) : (
           <Navbar
@@ -125,7 +111,7 @@ Header.propTypes = {
   siteTitle: PropTypes.string,
 }
 
-Header.defaultProps = {
+Header.defadivtProps = {
   siteTitle: `The Art of Design`,
 }
 

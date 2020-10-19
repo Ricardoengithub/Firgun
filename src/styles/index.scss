@@ -14,7 +14,7 @@ body {
   background-color: rgb(25, 25, 25);
 }
 #header {
-  width: 100%;
+  width: 95%;
   max-width: 900px;
   margin: 0 auto;
   display: flex;
@@ -23,13 +23,10 @@ body {
   align-items: center;
   height: 44px;
 
-  li {
-    font-weight: 100;
-    a {
-      color: lightgray;
-      font-size: 15px;
-      text-decoration: none;
-    }
+  a {
+    color: lightgray;
+    font-size: 15px;
+    text-decoration: none;
   }
 }
 #home {
