@@ -1,8 +1,32 @@
 import PropTypes from "prop-types"
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, StaticQuery } from "gatsby"
 import { Navbar, Nav } from "react-bootstrap"
-import { FaLeaf } from "react-icons/fa"
+import { FaLeaf, FaHeart } from "react-icons/fa"
+import Img from "gatsby-image"
+
+const Logo = () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        file(relativePath: { eq: "icon.png" }) {
+          childImageSharp {
+            # Specify the image processing specifications right in the query.
+            # Makes it trivial to update as your page's design changes.
+            fixed(width: 30, height: 30) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <div>
+        <Img fixed={data.file.childImageSharp.fixed} />
+      </div>
+    )}
+  />
+)
 
 class Header extends React.Component {
   constructor(props) {
@@ -37,6 +61,9 @@ class Header extends React.Component {
               <Link to="/">
                 <FaLeaf style={{ color: "white" }} />
               </Link>
+              {/* <Link to="/">
+                <Logo />
+              </Link> */}
               <Link to="/css">CSS</Link>
               <Link to="/blog/javascript">Javascript</Link>
               <Link to="/blog/python">Python</Link>
@@ -54,7 +81,7 @@ class Header extends React.Component {
           >
             <Navbar.Brand>
               <Link to="/" style={{ color: `white` }}>
-                {this.props.siteTitle}
+                <Logo />
               </Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -93,10 +120,8 @@ class Header extends React.Component {
               </Nav>
               <Navbar.Collapse className="justify-content-end">
                 <Navbar.Text>
-                  Creado por:{" "}
-                  <Link to="/author" style={{ color: `white` }}>
-                    Ricardoengitlab
-                  </Link>
+                  Made with <FaHeart style={{ color: `red` }} /> by{" "}
+                  <Link to="/author">Ricardoengitlab</Link>
                 </Navbar.Text>
               </Navbar.Collapse>
             </Navbar.Collapse>
