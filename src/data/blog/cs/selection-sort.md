@@ -1,0 +1,137 @@
+---
+path: "/blog/cs/selection-sort"
+date: "2020-10-19"
+tags: "Blog"
+subtag: "Computer Science"
+title: "Selection sort"
+author: "Ricardoentuiter"
+excerpt: "Selection sort"
+---
+
+## Selection sort
+
+---
+
+_Selection sort_ es un algoritmo de ordenamiento.
+
+<br />
+
+#### Pasos a seguir
+
+---
+
+Recorre la lista haciendo lo siguiente para cada posición:
+
+1. Busca al elemento mínimo en la lista y guarda su posición(index).
+2. Al llegar al final de la lista intercambia el elemento por el que está al inicio de la lista.
+3. Repite con el resto de la lista.
+
+<br />
+
+#### Ejemplo
+
+---
+
+Tenemos la siguiente lista: 10, 7, 3, 1, 5, 9
+
+| Index |       Lista       | Mínimo | Posición |         Resultado |
+| ----- | :---------------: | :----: | :------: | ----------------: |
+| -     |         -         |   -    |    -     | 10, 7, 3, 1, 5, 9 |
+| 0     | 10, 7, 3, 1, 5, 9 |   1    |    3     | 1, 7, 3, 10, 5, 9 |
+| 1     |  7, 3, 10, 5, 9   |   3    |    2     | 1, 3, 7, 10, 5, 9 |
+| 2     |    7, 10, 5, 9    |   5    |    4     | 1, 3, 5, 10, 7, 9 |
+| 4     |     10, 7, 9      |   7    |    4     | 1, 3, 5, 7, 10, 9 |
+| 5     |       10, 9       |   9    |    5     | 1, 3, 5, 7, 9, 10 |
+| 6     |        10         |   10   |    5     | 1, 3, 5, 7, 9, 10 |
+
+<br />
+
+#### Complejidad en tiempo
+
+---
+
+En cada iteración seleccionamos al menor de la lista, la cual tiene un elemento menos por lo que se hace una comparación menos que la anterior comparación.
+
+**Caso Promedio**: $\mathcal{O}(n^2)$
+
+$$
+n + (n-1) + (n-2) + ... + 2 + 1 = \frac{n (n + 1)}{2} = \mathcal{O}(n^2)
+$$
+
+**Peor Caso**: $\mathcal{O}(n^2)$
+
+**Caso Promedio**: $\mathcal{O}(n^2)$
+
+<br />
+
+#### Complejidad en espacio
+
+---
+
+En cada iteración se guarda unicamente el elemento mínimo por lo que la complejidad en espacio es:
+
+$$
+\mathcal{O}(1)
+$$
+
+<br />
+
+#### Programas
+
+---
+
+- Python
+
+```python{numberLines: true}
+def selectionSort(arr):
+    for i in range(0, len(arr)):
+        min = i
+        for j in range(i+1, len(arr)):
+            if(arr[j] < arr[min]):
+                min = j
+        tmp = arr[i]
+        arr[i] = arr[min]
+        arr[min] = tmp
+    return arr
+```
+
+- Go
+```go{numberLines: true}
+func SelectionSort(arr []int) []int{
+
+	var minimo int = 0
+	for i:=0; i < len(arr); i++{
+		minimo = i
+
+		for j:=i+1; j < len(arr); j++{
+			if(arr[j] < arr[minimo]){
+				minimo = j
+			}
+		}
+
+		var tmp int = arr[i]
+		arr[i] = arr[minimo]
+		arr[minimo] = tmp
+	}
+	return arr
+}
+```
+
+- Javascript
+
+```js{numberLines: true}
+function selectionSort(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    var min = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[min]) {
+        min = j;
+      }
+    }
+    let tmp = arr[i];
+    arr[i] = arr[min];
+    arr[min] = tmp;
+  }
+  return arr;
+}
+```
