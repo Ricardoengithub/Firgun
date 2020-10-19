@@ -13,7 +13,7 @@ import {
 const Home = styled.div`
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(95deg, #4056a1 45%, white 45%);
+  background: linear-gradient(90deg, #4056a1 45%, white 45%);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

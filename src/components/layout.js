@@ -7,7 +7,9 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import { FaHeart } from "react-icons/fa"
+
 
 import Header from "./header"
 
@@ -26,6 +28,10 @@ const Layout = ({ children }) => {
     <div style={{ fontSize: `16px` }}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
+      <div style={{ textAlign: `center`, margin: `5px auto` }}>
+        Made with <FaHeart style={{ color: `red` }} /> by{" "}
+        <Link to="/author">Ricardoengitlab</Link>
+      </div>
     </div>
   )
 }
