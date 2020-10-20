@@ -26,7 +26,14 @@ const Tags = ({ pageContext, data }) => {
           //   <ListGroup.Item action>{node}</ListGroup.Item>
           // </Link>
           <li>
-            <Link to={"/" + tag.toLowerCase() + "/" + node.toLowerCase()}>
+            <Link
+              to={
+                "/" +
+                tag.toLowerCase() +
+                "/" +
+                node.split(" ").join("_").toLowerCase()
+              }
+            >
               {node}
             </Link>
           </li>

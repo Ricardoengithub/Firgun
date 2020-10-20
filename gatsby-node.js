@@ -84,7 +84,7 @@ exports.createPages = ({ graphql, actions }) => {
             "/" +
             node.frontmatter.tags.toLowerCase() +
             "/" +
-            node.frontmatter.subtag.toLowerCase()
+            node.frontmatter.subtag.split(" ").join("_").toLowerCase()
           createPage({
             path,
             component: subtagsTemplate,

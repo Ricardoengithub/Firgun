@@ -20,7 +20,7 @@ const SubTags = ({ pageContext, data }) => {
           textAlign: `center`,
         }}
       >
-        {tag + " " + subtag}
+        {subtag}
       </h1>
       <ul style={{ width: `90%`, maxWidth: `900px`, margin: `0 auto` }}>
         {edges.map(({ node }) => {

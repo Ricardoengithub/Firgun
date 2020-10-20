@@ -12,7 +12,7 @@ const Logo = () => (
         file(relativePath: { eq: "icon.png" }) {
           childImageSharp {
             # Specify the image processing specifications right in the query.
-            # Makes it trivial to update as your page's design changes.
+            # Makes it trivial to update as your page'b design changes.
             fixed(width: 30, height: 30) {
               ...GatsbyImageSharpFixed
             }
@@ -87,7 +87,7 @@ class Header extends React.Component {
               <Link to="/blog/python">Python</Link>
               <Link to="/blog/golang">Golang</Link>
               <Link to="/blog/haskell">Haskell</Link>
-              <Link to="/blog/cs">Computer Science</Link>
+              <Link to="/blog/computer_science">Computer Science</Link>
               <Link to="/blog/react">React</Link>
               {this.state.dark ? (
                 <FaSun onClick={e => this.dark(e)} />
@@ -140,7 +140,7 @@ class Header extends React.Component {
                   </Link>
                 </Nav.Item>
                 <Nav.Item style={{ margin: `5px 10px` }}>
-                  <Link to="/blog/cs" style={{ color: `lightgray` }}>
+                  <Link to="/blog/computer_science" style={{ color: `lightgray` }}>
                     Computer Science
                   </Link>
                 </Nav.Item>

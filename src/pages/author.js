@@ -18,6 +18,7 @@ const Home = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  color: black;
 
   & h3,
   h1 {
