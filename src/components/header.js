@@ -56,6 +56,7 @@ class Header extends React.Component {
 
   dark(e) {
     e.preventDefault()
+    document.body.style.transition = "background-color 1s, color 2s"
     if (this.state.dark) {
       document.body.style.color = "black"
       document.body.style.backgroundColor = "white"
