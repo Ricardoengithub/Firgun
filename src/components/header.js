@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import { Link, graphql, StaticQuery } from "gatsby"
 import { Navbar, Nav } from "react-bootstrap"
-import { FaLeaf, FaHeart, FaMoon, FaSun } from "react-icons/fa"
+import { FaLeaf, FaMoon, FaSun } from "react-icons/fa"
 import Img from "gatsby-image"
 
 const Logo = () => (
@@ -136,17 +136,25 @@ class Header extends React.Component {
                   </Link>
                 </Nav.Item>
                 <Nav.Item style={{ margin: `5px 10px` }}>
-                  <Link to="/blog" style={{ color: `lightgray` }}>
-                    Blog
-                  </Link>
+                  <Link to="/blog/cs" style={{ color: `lightgray` }}>Computer Science</Link>
+                </Nav.Item>
+                <Nav.Item style={{ margin: `5px 10px` }}>
+                  <Link to="/blog/react" style={{ color: `lightgray` }}>React</Link>
+                </Nav.Item>
+                <Nav.Item style={{ textAlign: `center`, margin: `1rem auto` }}>
+                  {this.state.dark ? (
+                    <FaSun
+                      onClick={e => this.dark(e)}
+                      style={{ color: `white` }}
+                    />
+                  ) : (
+                    <FaMoon
+                      onClick={e => this.dark(e)}
+                      style={{ color: `white` }}
+                    />
+                  )}
                 </Nav.Item>
               </Nav>
-              <Navbar.Collapse className="justify-content-end">
-                <Navbar.Text>
-                  Made with <FaHeart style={{ color: `red` }} /> by{" "}
-                  <Link to="/author">Ricardoengitlab</Link>
-                </Navbar.Text>
-              </Navbar.Collapse>
             </Navbar.Collapse>
           </Navbar>
         )}
