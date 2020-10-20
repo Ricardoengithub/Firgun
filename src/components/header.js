@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import { Link, graphql, StaticQuery } from "gatsby"
 import { Navbar, Nav } from "react-bootstrap"
-import { FaLeaf, FaHeart } from "react-icons/fa"
+import { FaLeaf, FaHeart, FaMoon, FaSun } from "react-icons/fa"
 import Img from "gatsby-image"
 
 const Logo = () => (
@@ -33,6 +33,7 @@ class Header extends React.Component {
     super(props)
     this.state = {
       isDesktop: false, //This is where I am having problems
+      dark: document.body.style.backgroundColor === "black" ? true : false,
     }
 
     this.updatePredicate = this.updatePredicate.bind(this)
@@ -48,6 +49,19 @@ class Header extends React.Component {
 
   updatePredicate() {
     this.setState({ isDesktop: window.innerWidth > 900 })
+  }
+
+  dark(e) {
+    e.preventDefault()
+    if (this.state.dark) {
+      document.body.style.color = "black"
+      document.body.style.backgroundColor = "white"
+      this.setState({ dark: false })
+    } else {
+      document.body.style.backgroundColor = "black"
+      document.body.style.color = "white"
+      this.setState({ dark: true })
+    }
   }
 
   render() {
@@ -69,7 +83,16 @@ class Header extends React.Component {
               <Link to="/blog/python">Python</Link>
               <Link to="/blog/golang">Golang</Link>
               <Link to="/blog/haskell">Haskell</Link>
-              <Link to="/blog">Blog</Link>
+              <Link to="/blog/cs">Computer Science</Link>
+              <Link to="/blog/react">React</Link>
+              {this.state.dark ? (
+                <FaSun onClick={e => this.dark(e)} />
+              ) : (
+                <FaMoon
+                  onClick={e => this.dark(e)}
+                  style={{ color: `white` }}
+                />
+              )}
             </div>
           </div>
         ) : (

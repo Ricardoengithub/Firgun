@@ -4,13 +4,22 @@ import { Card, Row } from "react-bootstrap"
 
 const CardComponent = ({ icon, title, text, linkDocs, linkBlog }) => {
   return (
-    <Card style={{ width: "18rem", margin: `1rem 1rem`, boxShadow: `0 4px 8px 0 rgba(0, 0, 0, 0.2)`, borderRadius: `5px` }}>
+    <Card
+      style={{
+        width: "18rem",
+        margin: `1rem 1rem`,
+        boxShadow: `0 4px 8px 0 rgba(0, 0, 0, 0.2)`,
+        borderRadius: `5px`,
+      }}
+    >
       <Card.Body>
-        <Card.Title style={{ fontSize: `6rem`, margin: `0 4.5rem` }}>
+        <Card.Title
+          style={{ fontSize: `6rem`, margin: `0 4.5rem`, color: `black` }}
+        >
           {icon}
         </Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{title}</Card.Subtitle>
-        <Card.Text>{text}</Card.Text>
+        <Card.Text style={{ color: `black` }}>{text}</Card.Text>
         <Row
           style={{
             width: `100%`,

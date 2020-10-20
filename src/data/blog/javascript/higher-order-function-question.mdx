@@ -11,69 +11,72 @@ excerpt: "Higher order function?"
 # Higher order function?
 
 ---
-<br/>
 
-Tenemos el siguiente código: 
+<br />
+
+Tenemos el siguiente código:
 
 ```javascript
 function copyArrayAndManipulate(array, instructions) {
-    const output = []
-    for (let index = 0; index < array.length; index++) {
-        output.push(instructions(array[index]))
-    }
-    return output;
+  const output = []
+  for (let index = 0; index < array.length; index++) {
+    output.push(instructions(array[index]))
+  }
+  return output
 }
 
 function multiplyBy2(input) {
-    return input * 2;
+  return input * 2
 }
 
 copyArrayAndManipulate([1, 2, 3], multiplyBy2)
 ```
-<br/>
 
-Vemos que si lo hacemos de esta manera, para cada operador y valor tendríamos que crear una nueva función. 
+<br />
+
+Vemos que si lo hacemos de esta manera, para cada operador y valor tendríamos que crear una nueva función.
 Podríamos extender este comportamiento de la siguiente manera:
-
 
 ```javascript{numberLines: true}
 function instruction(value, operator, secondValue) {
-    switch (operator) {
-        case `+`:
-            return value + secondValue;
-            break;
-        case `-`:
-            return value - secondValue;
-        case `*`:
-            return value * secondValue;
-        case `/`:
-            return value / secondValue;
-        default:
-            return operator(value);
-            break;
-    }
+  switch (operator) {
+    case `+`:
+      return value + secondValue
+      break
+    case `-`:
+      return value - secondValue
+    case `*`:
+      return value * secondValue
+    case `/`:
+      return value / secondValue
+    default:
+      return operator(value)
+      break
+  }
 }
 
 function copyArrayAndManipulate(array, operator, secondValue = null) {
-    const output = []
-    for (let index = 0; index < array.length; index++) {
-        output.push(instruction(array[index], operator, secondValue))        
-    }
-    return output
+  const output = []
+  for (let index = 0; index < array.length; index++) {
+    output.push(instruction(array[index], operator, secondValue))
+  }
+  return output
 }
 
 function multiplyBy10(input) {
-    return input * 10;
+  return input * 10
 }
 
 var array = [1, 2, 3]
 
 console.log(copyArrayAndManipulate(array, multiplyBy10)) /* [10, 20, 30] */
-console.log(copyArrayAndManipulate(array, `*`, 10))      /* [10, 20, 30] */
+console.log(copyArrayAndManipulate(array, `*`, 10)) /* [10, 20, 30] */
 ```
-<br/>
+
+<br />
 
 #### Explicacion línea por línea
+
 ---
 
 **1-16:** Función donde específicamos el operador y lo aplicamos al primer valor junto al segundo.
@@ -84,6 +87,6 @@ console.log(copyArrayAndManipulate(array, `*`, 10))      /* [10, 20, 30] */
 
 **30:** Arreglo a aplicar función.
 
----
+<br />
 
 Vemos que hemos simulado el mismo comportamiento y además lo hemos extendido para no tener que definir muchas funciones para aplicar una función a nuestros valores del arreglo, y además sigue manteniendo la misma funcionalidad que antes en caso de que necesitemos aplicar alguna función donde sea necesario aplicar más de un operador a nuestros valores del arreglo.
