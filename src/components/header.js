@@ -32,8 +32,8 @@ class Header extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isDesktop: false, //This is where I am having problems
-      dark: document.body.style.backgroundColor === "black" ? true : false,
+      isDesktop: false,
+      dark: false,
     }
 
     this.updatePredicate = this.updatePredicate.bind(this)
@@ -41,6 +41,9 @@ class Header extends React.Component {
   componentDidMount() {
     this.updatePredicate()
     window.addEventListener("resize", this.updatePredicate)
+    this.setState({
+      dark: document.body.style.backgroundColor === "black" ? true : false,
+    })
   }
 
   componentWillUnmount() {
@@ -136,10 +139,14 @@ class Header extends React.Component {
                   </Link>
                 </Nav.Item>
                 <Nav.Item style={{ margin: `5px 10px` }}>
-                  <Link to="/blog/cs" style={{ color: `lightgray` }}>Computer Science</Link>
+                  <Link to="/blog/cs" style={{ color: `lightgray` }}>
+                    Computer Science
+                  </Link>
                 </Nav.Item>
                 <Nav.Item style={{ margin: `5px 10px` }}>
-                  <Link to="/blog/react" style={{ color: `lightgray` }}>React</Link>
+                  <Link to="/blog/react" style={{ color: `lightgray` }}>
+                    React
+                  </Link>
                 </Nav.Item>
                 <Nav.Item style={{ textAlign: `center`, margin: `1rem auto` }}>
                   {this.state.dark ? (
