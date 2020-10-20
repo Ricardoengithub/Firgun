@@ -1,0 +1,37 @@
+---
+path: "/blog/react/how-to-update-arrays-using-hooks"
+date: "2020-10-20"
+tags: "Blog"
+subtag: "React"
+title: "Como actualizar arreglos usando hooks"
+author: "Ricardoentuiter"
+excerpt: "Como actualizar arreglos usando hooks"
+---
+
+## Como actualizar arreglos usando hooks
+
+---
+
+Si declaramos un arreglo de la siguiente forma:
+
+```js
+const [arr, setArr] = useState([]) // arr = [1,2,3]
+```
+
+Y después intentamos actualizar el arreglo añadiendo otro elemento de la siguiente forma:
+
+```js
+setArr(arr.push(newValue)) // Error
+```
+
+Nos dirá que **_arr.push_** no es una función, por lo que entonces ¿Cómo podemos modificar nuestro arreglo?
+
+<br />
+
+#### Solución
+
+---
+
+```js
+setArr(arr => [...arr, newValue])
+```
