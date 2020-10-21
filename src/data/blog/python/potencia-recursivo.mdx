@@ -1,0 +1,70 @@
+---
+path: "/blog/python/potencia-recursivo"
+date: "2020-10-21"
+tags: "Blog"
+subtag: "Python"
+title: "Potencia recursivo"
+author: "Ricardoentuiter"
+excerpt: "Potencia recursivo"
+---
+
+# Potencia Recursivo
+
+---
+
+<br />
+
+El siguiente código resuelve este problema:
+
+```python{numberLines: true}
+def potencia(x,y):
+	if (y == 0):
+		return 1
+	elif (y == 1):
+		return x
+	else:
+		return x * potencia(x,y-1)
+```
+
+<br />
+
+#### Explicación línea por línea
+
+---
+
+**1:** Crea la función potencia que recibe dos numeros(base y exponente):
+
+**2-3:** Caso base para exponente = 0
+
+**4-5:** Caso base para exponente = 1
+
+**6-7:** Caso recursivo dónde se vuelve a llamar a la función.
+
+<br />
+
+#### Código completo
+
+---
+
+```python{numberLines: true}
+def potencia(x,y):
+	if (y == 0):
+		return 1
+	elif (y == 1):
+		return x
+	else:
+		return x * potencia(x,y-1)
+
+def main():
+
+	x = int(input("Escribe x: "))
+	y = int(input("Escribe la potencia a la que quieres elevar x: "))
+
+	print(potencia(x,y)))
+
+
+if __name__ == "__main__":
+    main()
+```
+
+[Descargar](https://gitlab.com/Ricardoengitlab/myp/-/raw/master/P2/src/potencia.py?inline=false "Código en gitlab")
