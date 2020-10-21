@@ -31,7 +31,6 @@ pre[class*="language-"] {
   background: #0F111A;
   color: #eee;
   border-radius: 5px;
-  overflow-x: auto;
 }
 
 pre > code[class*="language-"] {
@@ -58,7 +57,8 @@ code[class*="language-"] ::selection {
 pre[class*="language-"] {
   padding: 1em;
   margin: 0.5em 0;
-  overflow: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 /* Inline code */
