@@ -1,0 +1,302 @@
+---
+path: "/blog/python/rsa"
+date: "2020-10-22"
+tags: "Blog"
+subtag: "Python"
+title: "RSA"
+author: "Ricardoentuiter"
+excerpt: "RSA"
+---
+
+# RSA
+
+---
+
+<br />
+En criptografía, RSA (Rivest, Shamir y Adleman) es un sistema criptográfico de clave
+pública desarrollado en 1979. Es el primer y más utilizado algoritmo de este tipo
+y es válido tanto para cifrar como para firmar digitalmente.{" "}
+
+[Wiki](https://es.wikipedia.org/wiki/RSA#Algoritmo_RSAm)
+
+<br />
+
+#### Pasos a seguir
+
+---
+
+1. Encontrar dos números primos **_p_** y **_q_**, entre más grandes mejor.
+2. Calcular n
+
+$$
+n = p \cdot q
+$$
+
+3. Calcular $\phi(n)$
+
+$$
+\phi(n) = (p - 1)\cdot(q - 1)
+$$
+
+4. Se elige un número **_e_** que sea primo relativo con $\phi(n)$ y el cual será nuestra llave pública
+
+5. Se busca un número **_d_** el cuál será nuestra llave privada y que satisfaga lo siguiente:
+
+$$
+e \cdot d \equiv 1 (mod \; \phi (n))
+$$
+
+<br />
+
+#### Programa
+
+---
+
+```python{numberLines: true}
+import random
+import math
+
+#Mapeo de letras a algun número o viceversa
+diccionario = {'a' : 0, 'b' : 1, 'c': 2 ,
+            'd' : 3, 'e' : 4, 'f': 5,
+            'g' : 6, 'h' : 7, 'i': 8,
+            'j' : 9, 'k' : 10, 'l': 11,
+            'm' : 12, 'n' : 13, 'ñ': 14,
+            'o' : 15, 'p' : 16, 'q': 17,
+            'r' : 18, 's' : 19, 't': 20,
+            'u' : 21, 'v' : 22, 'w': 23,
+            'x' : 24, 'y' : 25, 'z': 26,
+            }
+
+def gcd(a, b):
+    #Regresa  el maximo comun divisor de un numero
+
+    tmp = 0
+    tmp2 = 0
+
+    if(a == b):
+        return a
+    if(a < b):
+        tmp = a
+        tmp2 = b -a
+    else:
+        tmp = a - b
+        tmp2 = b
+    if(tmp < 0 or tmp2 < 0):
+        return 1
+    else:
+        return gcd(tmp,tmp2)
+
+
+def egcd(a, b):
+    #Funcion auxiliar para sacar el inverso de un numero modulo n
+
+    if a == 0:
+        return (b, 0, 1)
+    g, y, x = egcd(b%a,a)
+    return (g, x - (b//a) * y, y)
+
+
+def modinv(a, m):
+    #Saca en inverso modular de un numero modulo n
+
+    g, x, y = egcd(a, m)
+    if g != 1:
+        raise Exception('Sin inverso modular.')
+    return x%m
+
+
+def power(x, y, p):
+    #Exponenciacion modular para primality test
+
+    res = 1
+    x = x % p
+
+    while (y > 0):
+
+        if (y & 1):
+            res = (res * x) % p
+
+        y = y>>1
+        x = (x * x) % p
+
+    return res;
+
+
+def miillerTest(d, n):
+    #Prueba si un numero es compuesto o altamente problable que sea primo
+
+    a = 2 + random.randint(1, n - 4)
+
+    x = power(a, d, n)
+
+    if (x == 1 or x == n - 1):
+        return True
+
+    while (d != n - 1):
+        x = (x * x) % n
+        d *= 2
+
+        if (x == 1):
+            return False
+        if (x == n - 1):
+            return True
+
+    return False
+
+
+def isPrime( n, k):
+    #Prueba si un numero es primo aplicando la prueba de miller-rabin
+
+    if (n <= 1 or n == 4):
+        return False
+    if (n <= 3):
+        return True
+
+    #Encuentra la r tal que p-1 = 2^n*r
+    d = n - 1
+    while (d % 2 == 0):
+        d //= 2
+
+    #Iteramos k veces
+    for i in range(k):
+        if (miillerTest(d, n) == False):
+            return False
+
+    return True #SI es probable que sea primo
+
+
+def encrypt(n, e, t):
+    #Cifra un mensaje usando RSA
+
+    t = list(t)
+    for i in range(0,len(t)):
+        t[i] = diccionario[t[i]]            #Canbia las letras por numeros
+
+    for i in range(0,len(t)):
+        t[i] = str((t[i] ** e ) % n)        #Las guarda como strings para mandar en mensaje
+
+    return " ".join(t)                      #Juntas las cadenas separadas por un espacio
+
+
+
+def get_key(val):
+    #Obtiene la letra dependiendo el número a buscar
+
+    for key, value in diccionario.items():
+         if val == value:
+             return key
+    return "key doesn't exist"
+
+
+def decrypt(n,d,t):
+    #Descifra un mensaje cifrado con RSA
+
+    t = [int(x) for x in t.split()]         #Separa los numeros quitando los espacios y los parsea
+
+    m = [pow(x, d, n) for x in t]           #Ejecuta la exponenciacion modular a cada numero
+
+    lista2 = []
+    for i in range(0,len(t)):
+        lista2.append(get_key(m[i]))        #Obtiene la letra asociada a cada numero
+
+
+    return "".join(lista2)                  #Regresa el texto ya descifrado
+
+
+
+def main():
+
+    #Texto a cifrar
+    textoclaro = "enesteproyectotenganmuchapacienciaesmuysencilloperosencillonosignificarapidosignificaenestecasoquesaleconlobasicoyaveranqueestoestamuydivertido"
+
+    # Creamos las llaves, p y q
+    k = 100;
+    cotaI = ['1'] + (['0']*49)
+    cotaS = ['1'] + ['0']*44 +(['9']*5)
+    llaves = []
+    for n in range(int("".join(cotaI)), int("".join(cotaS))):
+        if (isPrime(n, k)):
+            llaves.append(n)
+
+    #Las elegimos de modo aleatorio
+    p = llaves[random.randint(0,len(llaves))]
+    q = llaves[random.randint(0,len(llaves))]
+
+    #Calculamos los parametros requeridos para cifrar y descifrar el texto claro
+    n = p*q
+    phi = (p-1)*(q-1)
+
+    for i in range(2,p*q):
+        if(math.gcd(i,phi) == 1):
+            e = i
+            break
+
+    d = modinv(e,phi)
+
+    #Con los parametros calculados ciframos y desciframos el mensaje
+    textocifrado = encrypt(n, e, textoclaro)
+    textodescifrado = decrypt(n,d,textocifrado)
+
+    print(f"Llaves generadas: {len(llaves)}\np: {p}\nq: {q}\nn: {n}\nphi: {phi}")
+    print(f"e: {e}\nd: {d}")
+
+    print(f"\nTexto a cifrar: {textoclaro}")
+    print(f"\nTexto cifrado: {textocifrado}")
+    print(f"\nTexto descifrado: {textodescifrado}")
+
+
+if __name__ == "__main__":
+    main()
+
+```
+
+[Descargar](https://gitlab.com/Ricardoengitlab/criptografia2020-2/-/raw/master/rsa/rsa.py?inline=false "Código en gitlab")
+
+<br />
+
+#### Explicación función por función
+
+---
+
+**16:** Máximo común divisor de un número, se utiliza en el modulo inverso
+
+**36:** Inverso de un número modulo n
+
+**45:** Inverso modular de un número modulo n.
+
+**54:** Exponenciacion modular.
+
+**71:** Prueba de miller para saber si un número es primo o no, ya que p y q son valores de 50 dígitos
+
+**93:** Decide que hacer si un número es probable que sea primo
+
+**114:** Cifra el mensaje con n, e, y el texto en claro.
+
+**128:** Nos da la letra o el número según sea el caso del valor a cifrar o descifrar
+
+**137:** Descifra el mensaje con n, d, y el texto cifrado
+
+<br />
+
+#### Explicacion Uso
+
+---
+
+**156:** Texto a cifrar
+
+**159-165:** Números primos entre nuestra cota inferior y superior (50 dígitos cada número)
+
+**168-169:** Elección aleatoaria de numeros primos en nuestro intervalo
+
+**172-173:** Calculo de n y phi
+
+**175-178:** Creacion de e ***(llave pública)***
+
+**180:** Creación de d ***(llave privada)***
+
+**183:** Cifrado de texto
+
+**183:** Descifrado de texto
+
+**186-191** Obtención de datos
