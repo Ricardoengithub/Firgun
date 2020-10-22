@@ -10,10 +10,10 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: `Firgun`,
-    description: `A documentation site about web dev.`,
+    description: `Just another web dev blog.`,
     author: `@Ricardoentuiter`,
     keywords: ["Web", "Development"],
-    siteUrl: "https://firgun.me",
+    siteUrl: "https://www.firgun.me",
   },
   plugins: [
     {
