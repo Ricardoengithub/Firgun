@@ -1,11 +1,11 @@
 ---
-path: "/blog/react/how-to-update-arrays-using-hooks"
-date: "2020-10-20"
+path: "/blog/react/how-to-update-arrays-with-setState"
+date: "2021-01-24"
 tags: "Blog"
 subtag: "React"
-title: "Como actualizar arreglos usando hooks"
+title: "Como actualizar arreglos usando setState"
 author: "Ricardoentuiter"
-excerpt: "Como actualizar arreglos usando hooks"
+excerpt: "Como actualizar arreglos usando setState"
 ---
 
 ---
@@ -13,13 +13,17 @@ excerpt: "Como actualizar arreglos usando hooks"
 Si declaramos un arreglo de la siguiente forma:
 
 ```js
-const [arr, setArr] = useState([]) // arr = []
+this.state = {
+	arr: []
+}
 ```
 
 Y después intentamos actualizar el arreglo añadiendo otro elemento de la siguiente forma:
 
 ```js
-setArr(arr.push(newValue)) // Error
+this.setState({
+	arr: arr.push(newValue)
+}) // Error
 ```
 
 Nos dirá que **_arr.push_** no es una función, por lo que entonces ¿Cómo podemos modificar nuestro arreglo?
@@ -31,5 +35,7 @@ Nos dirá que **_arr.push_** no es una función, por lo que entonces ¿Cómo pod
 ---
 
 ```js
-setArr(arr => [...arr, newValue])
+this.setState((prev) => ({
+	arr: [...prev.arr, newValue]
+}))
 ```

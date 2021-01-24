@@ -10,6 +10,8 @@ const Template = ({ data, pageContext }) => {
   const title = post.title
   const tag = post.tags
   const subtag = post.subtag
+  const author = post.author
+  const date = post.date
   const body = data.mdx.body
   const myUrl = data.site.siteMetadata.siteUrl + post.path
 
@@ -21,6 +23,13 @@ const Template = ({ data, pageContext }) => {
         pathname={myUrl}
       />
       <div id="mdx">
+        <h2>{title}</h2>
+        <span>
+          by
+          <a href={"https://twitter.com/" + author}> {author}</a> -{" "}
+          {date.slice(0, 1).toUpperCase() +
+            date.slice(1, date.length)}
+        </span>
         <MDXRenderer title="My Stuff!" style={{ maxWidth: 1100 }}>
           {body}
         </MDXRenderer>
@@ -53,6 +62,8 @@ export const postQuery = graphql`
         excerpt
         tags
         subtag
+        author
+        date(formatString: "MMMM DD, YYYY", locale: "es")
       }
     }
   }

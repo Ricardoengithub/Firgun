@@ -22,12 +22,20 @@ const SubTags = ({ pageContext, data }) => {
       >
         {subtag}
       </h1>
-      <ul style={{ width: `90%`, maxWidth: `900px`, margin: `0 auto` }}>
+      <ul style={{ width: `90%`, maxWidth: `900px`, margin: `0 auto`, minHeight: '77vh' }}>
         {edges.map(({ node }) => {
           if (node.frontmatter.subtag.toLowerCase() === subtag.toLowerCase()) {
             return (
               <li>
-                <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
+                <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>{" "}
+                -{" "}
+                <small>
+                  {node.frontmatter.date.slice(0, 1).toUpperCase() +
+                    node.frontmatter.date.slice(
+                      1,
+                      node.frontmatter.date.length
+                    )}
+                </small>
               </li>
             )
           } else {
@@ -74,7 +82,7 @@ export const pageQuery = graphql`
             path
             subtag
             tags
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "MMMM DD, YYYY", locale: "es")
           }
         }
       }

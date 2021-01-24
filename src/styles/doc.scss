@@ -1,7 +1,12 @@
+body {
+  overflow-y: overlay;
+}
+
 #mdx {
   width: 90%;
   max-width: 1100px;
   margin: 4rem auto;
+  min-height: 77vh;
 
   h1,
   h2,
@@ -15,6 +20,7 @@
   h1 {
     font-size: 25px;
   }
+
   h4 {
     font-size: 19px;
   }
@@ -43,6 +49,7 @@
     background-color: black;
   }
 }
+
 table {
   table-layout: fixed;
 }
@@ -55,6 +62,7 @@ td {
   border-collapse: collapse;
   padding: 5px 10px;
 }
+
 th:last-child {
   border-right: 1px solid black;
 }

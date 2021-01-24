@@ -55,7 +55,12 @@ body {
 
   #posts {
     flex: 0 1 100%;
-    text-align: center;
+    ul {
+      li{
+        width: auto;
+        margin: 0 auto;
+      }
+    }
   }
 }
 
