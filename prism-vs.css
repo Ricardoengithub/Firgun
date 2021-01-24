@@ -57,7 +57,7 @@ code[class*="language-"] ::selection {
 pre[class*="language-"] {
   padding: 1em;
   margin: 0.5em 0;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
 }
 
