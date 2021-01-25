@@ -20,7 +20,14 @@ const Tags = ({ pageContext, data }) => {
       >
         {tag}
       </h1>
-      <ul style={{ width: `90%`, maxWidth: `900px`, margin: `0 auto` }}>
+      <ul
+        style={{
+          width: `90%`,
+          maxWidth: `900px`,
+          margin: `0 auto`,
+          minHeight: "77vh",
+        }}
+      >
         {data.allMdx.distinct.map(node => (
           // <Link to={"/" + tag.toLowerCase() + "/" + node.toLowerCase()}>
           //   <ListGroup.Item action>{node}</ListGroup.Item>

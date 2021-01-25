@@ -10,7 +10,7 @@ excerpt: "Higher order function?"
 
 ---
 
-<br />
+
 
 Tenemos el siguiente código:
 
@@ -30,7 +30,7 @@ function multiplyBy2(input) {
 copyArrayAndManipulate([1, 2, 3], multiplyBy2)
 ```
 
-<br />
+
 
 Vemos que si lo hacemos de esta manera, para cada operador y valor tendríamos que crear una nueva función.
 Podríamos extender este comportamiento de la siguiente manera:
@@ -71,7 +71,7 @@ console.log(copyArrayAndManipulate(array, multiplyBy10)) /* [10, 20, 30] */
 console.log(copyArrayAndManipulate(array, `*`, 10)) /* [10, 20, 30] */
 ```
 
-<br />
+
 
 #### Explicacion línea por línea
 
@@ -85,6 +85,6 @@ console.log(copyArrayAndManipulate(array, `*`, 10)) /* [10, 20, 30] */
 
 **30:** Arreglo a aplicar función.
 
-<br />
+
 
 Vemos que hemos simulado el mismo comportamiento y además lo hemos extendido para no tener que definir muchas funciones para aplicar una función a nuestros valores del arreglo, y además sigue manteniendo la misma funcionalidad que antes en caso de que necesitemos aplicar alguna función donde sea necesario aplicar más de un operador a nuestros valores del arreglo.

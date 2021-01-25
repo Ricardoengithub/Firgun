@@ -58,12 +58,12 @@ class Header extends React.Component {
     e.preventDefault()
     document.body.style.transition = "background-color 1s, color 2s"
     if (this.state.dark) {
-      document.body.style.color = "black"
-      document.body.style.backgroundColor = "#fbfbfb"
+      document.body.style.color = "#000000"
+      document.body.style.backgroundColor = "#FBFBFB"
       this.setState({ dark: false })
     } else {
-      document.body.style.backgroundColor = "black"
-      document.body.style.color = "#fbfbfb"
+      document.body.style.backgroundColor = "#000010"
+      document.body.style.color = "#FBFBFB"
       this.setState({ dark: true })
     }
   }

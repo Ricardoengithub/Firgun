@@ -9,7 +9,7 @@ excerpt: "Spread operator"
 ---
 
 ---
-<br/>
+
 
 Tenemos el siguiente código:
 
@@ -20,12 +20,12 @@ const f = (a, b, c, d, ...e) => {
 
 console.log(f(1,2,3,4,5,6,7))  // [3, 7, [5,6,7]] 
 ```
-<br/>
+
 
 **Se escribe el nombre de la variable precedida por tres puntos.**
 
 El spread operator nos ayuda a hacer referencia a todos los parámetros que recibimos a partir de cierto punto, en este caso está tomando todos los valores después de *d* y guardandolos en la variable *e*.
-<br/>
+
 
 ```javascript
 const x = [1, 2, 3, 4]
@@ -35,7 +35,7 @@ const z = [...x, ...y]
 console.log(w) // [[1, 2, 3, 4], [5, 6, 7, 8]]
 console.log(z) // [1, 2, 3, 4, 5, 6, 7, 8]
 ```
-<br/>
+
 
 No se recomienda usar para concatenar elementos ya que es menos eficiente que concat().
 
@@ -48,7 +48,7 @@ function add(a, b, c) {
 var arr = [10, 20, 70]
 add.apply(null, arr)
 ```
-<br/>
+
 
 Ya con el operador se simplifica de la siguiente manera:
 
