@@ -1,0 +1,36 @@
+---
+path: "/blog/hardware/how-to-avoid-random-resets-with-ryzen"
+date: "2021-01-31"
+tags: "Blog"
+subtag: "Hardware"
+title: "Como evitar reinicios en Arch Linux con procesadores Ryzen"
+author: "Ricardoentuiter"
+excerpt: "Como evitar reinicios en Arch Linux con procesadores Ryzen"
+---
+
+---
+
+Si estás experimentando reinicios random mientras usas tu computadora con procesador Ryzen esta es una posible solución, ya que luego de intentar varias soluciones, esta fue la más sencilla y la única que me sirvió para evitar que la computadora se reiniciara o que se congelara.
+
+Cabe recordar que esto me ocurría en cualquier momento y en una variedad de casos distintos, por ejemplo, cuando se quedaba un rato inactiva la computadora y regresaba a ocuparla, o simplemente mientras navegaba por internet.
+
+---
+
+Lo primero que debemos hacer es instalar dos paquetes de la forma en que se instalan los que pertenecen al repositorio AUR, el primero es [**_zenstates-git_**](https://aur.archlinux.org/packages/zenstates-git/) y el segundo [**_disable-c6-systemd_**](https://aur.archlinux.org/packages/disable-c6-systemd/).
+
+Para el caso de _disable-c6-systemd_ sería exactamente lo mismo solamente cambiando la liga y el nombre, mostraremos el caso de _zenstates-git_:
+
+```bash
+git clone https://aur.archlinux.org/zenstates-git.git  #Liga
+cd zenstates-git #Nombre
+makepkg -si
+```
+
+Una vez instalados lo único que hace falta es iniciar el servicio y con esto habremos solucionado el problema.
+
+```bash
+sudo systemctl enable disable-c6.service
+sudo systemctl start disable-c6.service
+```
+
+Si te encuentras utilizando otra distro, podrías revisar este [link](https://github.com/jfredrickson/disable-c6) donde podrías encontrar la variante de la solución a este problema que tanto me costó a mi solucionar y que era algo que no encontraba dentro de los foros donde se proponen soluciones a esto, y ese es el motivo principal por el cuál fue escrito este post.
