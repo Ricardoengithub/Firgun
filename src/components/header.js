@@ -42,7 +42,7 @@ class Header extends React.Component {
     this.updatePredicate()
     window.addEventListener("resize", this.updatePredicate)
     this.setState({
-      dark: document.body.style.backgroundColor === "black" ? true : false,
+      dark: document.body.style.backgroundColor === "rgb(0, 0, 16)" ? true : false,
     })
   }
 
@@ -62,7 +62,7 @@ class Header extends React.Component {
       document.body.style.backgroundColor = "#FBFBFB"
       this.setState({ dark: false })
     } else {
-      document.body.style.backgroundColor = "#000010"
+      document.body.style.backgroundColor = "rgb(0, 0, 16)"
       document.body.style.color = "#FBFBFB"
       this.setState({ dark: true })
     }
@@ -140,7 +140,10 @@ class Header extends React.Component {
                   </Link>
                 </Nav.Item>
                 <Nav.Item style={{ margin: `5px 10px` }}>
-                  <Link to="/blog/computer_science" style={{ color: `lightgray` }}>
+                  <Link
+                    to="/blog/computer_science"
+                    style={{ color: `lightgray` }}
+                  >
                     Computer Science
                   </Link>
                 </Nav.Item>

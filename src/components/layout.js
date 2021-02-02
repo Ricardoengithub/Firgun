@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
     <div style={{ fontSize: `16px` }}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
-      <div style={{ textAlign: `center`, margin: `5px auto` }}>
+      <div style={{ textAlign: `center`, margin: `5px auto`, position: "relative", bottom: "0" }}>
         Made with <FaHeart style={{ color: `red` }} /> by{" "}
         <Link to="/author">Ricardoengitlab</Link>
       </div>
