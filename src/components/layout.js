@@ -9,9 +9,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { FaHeart } from "react-icons/fa"
-
-
 import Header from "./header"
+import BuyMe from "./buymeacoffe"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -28,9 +27,17 @@ const Layout = ({ children }) => {
     <div style={{ fontSize: `16px` }}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
-      <div style={{ textAlign: `center`, margin: `5px auto`, position: "relative", bottom: "0" }}>
-        Made with <FaHeart style={{ color: `red` }} /> by{" "}
-        <Link to="/author">Ricardoengitlab</Link>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+        }}
+      >
+        <div className="footer">
+          Made with <FaHeart style={{ color: `red` }} /> by{" "}
+          <Link to="/author">Ricardoengitlab</Link>
+        </div>
+        <BuyMe />
       </div>
     </div>
   )

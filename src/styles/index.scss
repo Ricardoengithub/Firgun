@@ -1,5 +1,4 @@
-$theme-colors: (
-  "darker": rgb(25, 25, 25),
+$theme-colors: ("darker": rgb(25, 25, 25),
 );
 @import "~bootstrap/scss/bootstrap";
 
@@ -7,12 +6,22 @@ $theme-colors: (
   font-family: sf;
   src: url(SF-Pro-Display-Regular.otf);
 }
+
+@font-face {
+  font-family: indie;
+  font-size: 25px;
+  src: url(IndieFlower-Regular.ttf);
+}
+
+
 body {
   font-family: sf;
 }
+
 #head {
   background-color: rgb(25, 25, 25);
 }
+
 #header {
   width: 95%;
   max-width: 900px;
@@ -29,6 +38,7 @@ body {
     text-decoration: none;
   }
 }
+
 #home {
   width: 90%;
   margin: 0 auto;
@@ -49,6 +59,22 @@ body {
   min-width: 300px;
 }
 
+.footer {
+  font-family: indie;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid rgb(231, 231, 231);
+  margin: 1em 0;
+  padding: 0;
+}
+
 @media only screen and (max-width: 1200px) {
   #cards {
     flex: 0 1 100%;
@@ -56,8 +82,9 @@ body {
 
   #posts {
     flex: 0 1 100%;
+
     ul {
-      li{
+      li {
         width: auto;
         margin: 0 auto;
       }
@@ -69,13 +96,8 @@ body {
   #posts {
     text-align: start;
   }
-}
 
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid rgb(231, 231, 231);
-  margin: 1em 0;
-  padding: 0;
+  .footer {
+    font-size: 15px;
+  }
 }
