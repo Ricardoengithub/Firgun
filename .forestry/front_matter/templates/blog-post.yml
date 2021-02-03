@@ -8,6 +8,6 @@ fields:
     required: false
   label: Titulo
   description: "<strong>Titulo</strong>"
-  hidden: true
+  hidden: false
 pages:
 - python/rsa.md
