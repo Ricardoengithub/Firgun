@@ -9,5 +9,28 @@ fields:
   label: Titulo
   description: "<strong>Titulo</strong>"
   hidden: false
+- name: author
+  type: text
+  config:
+    required: false
+  label: Author
+- name: fecha
+  type: datetime
+  label: Fecha
+  description: ''
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+- name: texto
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Texto
 pages:
 - python/rsa.md
