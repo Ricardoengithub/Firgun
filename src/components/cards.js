@@ -14,20 +14,20 @@ const Cards = () => {
         }}
       >
         <CardComponent
-          icon={<FaCss3Alt />}
-          title={"CSS3"}
-          text={
-            "CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado."
-          }
-          linkDocs="/css"
-        />
-        <CardComponent
           icon={<FaJs />}
           title={"Javascript"}
           text={
             "JavaScript (JS) es un lenguaje de programación ligero, interpretado, o compilado justo-a-tiempo (just-in-time) con funciones de primera clase."
           }
           linkBlog="/blog/javascript"
+        />
+        <CardComponent
+          icon={<FaCss3Alt />}
+          title={"CSS3"}
+          text={
+            "CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado."
+          }
+          linkDocs="/css"
         />
         <CardComponent
           icon={<FaPython />}

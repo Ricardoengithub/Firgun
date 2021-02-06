@@ -82,8 +82,8 @@ class Header extends React.Component {
               {/* <Link to="/">
                 <Logo />
               </Link> */}
-              <Link to="/css">CSS</Link>
               <Link to="/blog/javascript">Javascript</Link>
+              <Link to="/css">CSS</Link>
               <Link to="/blog/python">Python</Link>
               <Link to="/blog/golang">Golang</Link>
               <Link to="/blog/haskell">Haskell</Link>
