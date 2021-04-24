@@ -1,0 +1,60 @@
+---
+path: "/blog/css/how-to-write-css"
+date: "2021-04-24"
+tags: "Blog"
+subtag: "CSS"
+title: "Como acomodar tus propiedades dentro de los selectores en CSS"
+author: "Ricardoentuiter"
+excerpt: "Como acomodar tus propiedades dentro de los selectores en CSS"
+---
+
+---
+
+Al estar trabajando con CSS puede parecer adecuado mostrar las propiedades conforme las vamos utilizando sin ningún 
+orden. Sin embargo puede llegar un punto donde quizá las propiedades estén tan revueltas que no se pueda leer y esto 
+haga más difícil el mantenimiento del código para nosotros o para las demás personas en el equipo.
+
+Es por eso que es mejor buscar una forma de hacerlo por todas las ventajas que puede tener para nosotros y nuestro 
+equipo, yo he encontrado la mía y es separando de la siguiente manera las propiedades: 
+
+- Posición
+- Forma de la caja
+- Tipografía
+- Diseño
+- Otros
+
+Utilizaremos los nombres en ingles para una manera más general de representar las cosas
+
+- Positioning
+- Box-model
+- Typography
+- Design
+- Others
+
+```css
+.selector {
+	/* Positioning */
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	/* Box-model */
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+
+	/* Typography */
+	font-family: Helvetica monospace;
+	font-size: 14px;
+
+	/* Design */
+	background-color: #f0f;
+	border: 1px solid blue;
+
+	/* Others */
+	visibility: hidden;
+}
+```
+
+
+
