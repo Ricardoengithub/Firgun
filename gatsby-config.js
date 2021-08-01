@@ -14,7 +14,7 @@ module.exports = {
     author: `@Ricardoentuiter`,
     keywords: ["Web", "Development"],
     siteUrl: "https://www.firgun.me",
-    pathPrefix: '/blog'
+    pathPrefix: ''
   },
   plugins: [
     {
